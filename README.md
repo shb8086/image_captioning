@@ -2,5 +2,7 @@
 
 ### links to the image dataset
 
-<p>https://www.kaggle.com/code/hsankesara/image-captioning<br>
-https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset/versions/1?resource=download</p>
+https://www.kaggle.com/code/hsankesara/image-captioning            
+https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset/versions/1?resource=download         
+
+https://keras.io/examples/vision/image_captioning/                      

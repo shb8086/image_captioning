@@ -7,7 +7,6 @@
 % Graphics should all go in the figs/ directory
 \graphicspath{{figs/}}
 
-
 \begin{document}
 
 % Editorial staff will replace the following values:
@@ -58,60 +57,89 @@
 
 \section{Introduction}
 \label{intro}
-We invite papers that present original work in all areas of Artificial Intelligence, either theoretical or applied. Canadian AI 2023 welcomes submissions on topics including (but not limited to):
+Automatically describing image content using natural sentences is known as image captioning.
+It is still a big challenge because understanding the semantic relationship of the objects in the image, their attributes, and the actions are required to generate a natural correct sentence.
+Furthermore, machines need to verbalize the semantic relations in addition to visual interpretation.
+There are so many image sources on television, the internet, news, and many other sources but most images do not have descriptions.
+A human can interpret an image without having a description whereas this is a tough task for machines to describe the content of an image naturally.
+These days generating caption and natural description of an image is a research concept.
 
-\
-We expressly encourage work that cuts across technical areas or applies AI techniques in the context of important domains such as e-commerce, games, healthcare, sustainability,  transportation, Internet of Things, and agriculture.
+This research topic is crucial for various reasons for example locating or understanding the type of activities.
+Image captioning need to identify objects, action, and the relationship among objects in the image and their activities.
+This is more difficult than identifying the objects because it also must pay attention to the relationships.
+For example, in an image with a train and people in a station, the caption can be that people are getting on the train or are waiting on the platform for a train. 
+The generated sentence must be syntactically and semantically correct. 
+The methods that are used for image captioning are broadly based on deep learning-based methods \cite{bahdanau2014neural,cho2014learning, sutskever2014sequence, szegedy2015going}.
 
-Moreover, we plan to have a collocated event on Ethics of AI, with a joint invited keynote and other activities related to this topic. We therefore encourage papers highlighting research in this specific area.
+The most important benefit of labeled datasets with various captions, like Flicker30k \cite{plummer2015flickr30k} is that deep convolutional neural networks (CNN) are efficacious.
+A method that automatically generates a sentence description has enthralled more research focus on artificial intelligence, it has played a significant role in computer vision, i.e., allowing computer systems to recognize images, that can be helpful for various purposes.
+The image captioning task became easier for a machine because of the existence of the large amount of annotated data, like Flickr8k \cite{hodosh2013framing}, Flickr30k \cite{plummer2015flickr30k}, and MS-COCO Captions \cite{chen2015microsoft}. 
+In addition to this many other large-scale datasets have been created \cite{sharma2018conceptual}, most of them contain only English captions.
+In contrast, datasets with captions described in other languages are scarce.
 
-We also welcome the submission of position papers, which present evidence-based arguments for a particular point of view without necessarily presenting a new system. There will be an option during the submission process to indicate that a paper is a position paper.
+Translating existed datasets from English to other languages is a cheap way to train models to generate non-English captions.
+Using this kind of non-English data has already shown that it introduces noise that can affect the  performance of models.
+Particularly, Xue et al. \cite{xue2020mt5} shows that the model performance is harmed when translated datasets are used instead of using originally annotated datasets in the target language.
 
-\subsection{Important Dates}
-\label{important}
+Hence, we introduce the new dataset with images and Persian descriptions.
+As far as we know, this is the first dataset proposed for the Image Captioning problem with captions in Persian.
+This dataset has 10180 labels for images from Flicker that are randomly selected and captioned manually by different people.
+Each image has five different reference descriptions. 
+Also, the average reference length is 13.3 and the standard deviation is 5.5. 
+These values are considerably high in comparison to other datasets on this subject.
+It should be considered that "mi" is also considered an independent word. 
+These characteristics make this dataset challenge. 
 
-\begin{table}[h]
-\begin{tabular}{ |l|l| }
- Submission deadline: & February 12th, 2023 (11:59 p.m. UTC-12) \\ 
- Author notification: & March 26th, 2023 \\  
- Final papers due: & April 9th, 2023 \\
- Main conference: & June 5 to 9, 2023
-\end{tabular}
-\vspace{0.2cm}
-\caption{Important dates}
-\label{tab:important}
-\end{table}
+\section{Literature Review}
+\label{literature}
 
-\section{Submission Details}
-\label{submission}
-We invite submissions of both long and short papers. Long papers must be no longer than \textbf{12 pages}, and Short papers must be no longer than \textbf{6 pages}, including references, formatted using the conference template. The authors should consult the authors guidelines and use the provided proceedings template to prepare their papers  \cite{cai2020,author1_name_author_2020}.
+The image captioning task became easier for a machine because of the existence of a large amount of annotated data, like Flickr8k \cite{hodosh2013framing}, Flickr30k \cite{plummer2015flickr30k}, and MS-COCO Captions \cite{chen2015microsoft}.
+Microsoft Common Objects in COntext (MS-COCO) is a dataset created from the images in MS-COCO \cite{chen2015microsoft} and human-generated captions. 
+The first version of the MS-COCO dataset contains 164K images split into training (83K), validation (41K) and test (41K) sets. 
+MS-COCO Captions dataset includes around 160k images from Flickr, distributed in over 80 categories, with five captions per image. 
+Its images are annotated using Amazon Mechanical Turk (AMT). 
+As a result, the descriptions’ average sentence length is about 10 words.
 
-Papers submitted to the conference must not have already been published, or accepted for publication, or be under review by a journal or another conference. Submissions will go through a \textbf{double-blind} review process by Program Committee members to assess originality, significance, technical merit, and clarity of presentation. As such, submissions must be anonymized, and papers that fail to do so will be rejected without review. A “Best Paper Award” and a “Best Student Paper Award” will be given at the conference respectively to the authors of each best paper, as judged by the Best Paper Award Selection Committee.
+Many large-scale datasets have been created [11-17]. 
+One example of a dataset that follows this approach is the Conceptual Captions dataset [8] which has more than 3.3M pairs of images and English captions. 
+It was created by crawling web pages and extracting images and its alt-text HTML attribute. 
+Agrawal et al. proposed nocaps [18] using real-world images which is a benchmark that consists of validation and test set with 4500 and 10,600 images with 11 human-generated captions per image. 
+Moreover, it has more objects per image than MS-COCO, and it has 600 object categories. 
+This dataset is created by selecting images from the Open Images V4 dataset [19]. 
 
-\section{Publication}
-\label{pub}
+Recently, Gurari et al. proposed the VizWiz-Captions dataset [20] focused on the real use case for visually impaired like blind people. 
+This dataset includes 39,181 images that are taken by blind people, each image has five captions using the AMT platform. 
+This dataset also has metadata that indicates the image issues. 
+The overlap between VizWiz and MS-COCO in the case of the caption is about 54\%, which shows a significant bias in photography situations.
+InstaPIC-1.1M [21] and \#PraCegoVer [22] are created by collecting posts from Instagram. 
+InstaPIC-1.1M includes 721,176 pairs of image-caption from 4.8k users. 
+Based on the 270 selected hashtags. 
+The captions in the InstaPIC-1.1M dataset are the contents that Instagram users wrote about their posts, which can be quite irrelevant to the content of the image. 
+\#PraCegoVer approach also is based on Instagram posts, but in contrast to InstaPIC-1.1M and Conceptual Captions, it collects only \#PraCegoVer tagged captions. 
+This dataset contains captions with 40 words on average, while those in MS-COCO Captions have only ten words, and the variance of sentence length in our dataset is also more significant.
 
-The conference proceedings will be published in PubPub open access online format \cite{pubpub2020}, and submitted to be indexed/abstracted in leading indexing services such as DBLP, ACM, Google Scholar. A paper will be accepted either as a long or as a short paper. Long papers will be allocated 12 pages while short papers will be allocated 6 pages in the proceedings. Authors of accepted papers will be allocated time for an oral presentation at the conference and will have the opportunity to present their work in a poster session. 
+In case of dataset in non-English languages also there is a dataset in Korean [23]. It contains Korean tourist spots (KTS) and focused on Korean multi-model deep-learning research. 
+The KTS dataset has four modalities (image, text, hashtags, and likes) and consists of 10 classes related to Korean tourist spots. 
+All data were extracted from Instagram and preprocessed. 
+The dataset includes 10 different classes with 1000 instances per class (total of 10,000 instances).
 
-At least one author of each accepted paper is required to attend the conference to present the work. The authors must agree to this requirement prior to submitting their paper for review.
+\section{Dataset Collection and Analysis}
+\label{dataset}
 
-In addition, the corresponding author of each paper, acting on behalf of all of the authors of that paper, must complete and sign a Consent-to-Publish form. The corresponding author signing the copyright form should match the corresponding author marked on the paper.
+\subsection{Dataset Collection}
+\subsection{Dataset Characteristics}
 
-\section*{Acknowledgements}
-Canadian AI is sponsored by the Canadian Artificial Intelligence Association(CAIAC)\cite{caiac}.
+\section{Experiment}
+\label{test}
 
-%Begin appendix section(s)
-\appendix
+\section{Conclusion and Future Works}
+\label{conclusion}
 
-% Add appendices here:
-\section{Example of math equation }
-%\label{appendix-customize-this-label}
-Binomial theorem: \cite{abramowitz1948handbook}
-\begin{equation}
-(x+y)^n=\sum_{\substack{k=0}}^{n}\dbinom{n}{k}x^{n-k}y^k
-\end{equation}
-
-
+In this paper, we introduced a new dataset for image captioning with Persian annotations for multi-modal tasks in the field of machine learning.
+This dataset is s designed for research with Persian texts, and it consists of images from Flicker. 
+The dataset can be used for multi-modal tasks, such as image captioning, multi-modal classification, and recommendation systems, as well as single-modal tasks, like image classification. 
+In the future, we plan to increase the size of the dataset by adding more images and more captions per image. 
+Also, we planned to categorize the images into different classes such as landscape, human, animals, and so on. 
 
 
 % All references should be stored in the file "references.bib"

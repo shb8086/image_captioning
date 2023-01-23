@@ -17,94 +17,428 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
-  \entry{cai2020}{misc}{}
-    \field{labeltitlesource}{title}
-    \field{title}{Canadian Artificial Intelligence Conference}
-    \verb{url}
-    \verb https://www.caiac.ca/en/conferences/canadianai-2022/home
-    \endverb
-    \field{journaltitle}{CAIAC}
-    \field{year}{2022}
-  \endentry
-
-  \entry{author1_name_author_2020}{inproceedings}{}
+  \entry{bahdanau2014neural}{article}{}
     \name{author}{3}{}{%
-      {{hash=ANL}{%
-         family={Author1-Name},
-         familyi={A\bibinithyphendelim N\bibinitperiod},
-         given={Lastname},
-         giveni={L\bibinitperiod},
+      {{hash=BD}{%
+         family={Bahdanau},
+         familyi={B\bibinitperiod},
+         given={Dzmitry},
+         giveni={D\bibinitperiod},
       }}%
-      {{hash=AnL}{%
-         family={Author2-name},
-         familyi={A\bibinithyphendelim n\bibinitperiod},
-         given={Lastname},
-         giveni={L\bibinitperiod},
+      {{hash=CK}{%
+         family={Cho},
+         familyi={C\bibinitperiod},
+         given={Kyunghyun},
+         giveni={K\bibinitperiod},
       }}%
-      {{hash=AnL}{%
-         family={Author3-name},
-         familyi={A\bibinithyphendelim n\bibinitperiod},
-         given={Lastname},
-         giveni={L\bibinitperiod},
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
       }}%
     }
-    \strng{namehash}{ANLAnLAnL1}
-    \strng{fullhash}{ANLAnLAnL1}
+    \strng{namehash}{BDCKBY1}
+    \strng{fullhash}{BDCKBY1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{booktitle}{{CAI}}
-    \field{pages}{1\bibrangedash 2}
-    \field{title}{Author {Guidelines} for {Canadian} {AI} {Conference}
-  {Proceedings}}
-    \field{year}{2020}
+    \field{title}{Neural machine translation by jointly learning to align and
+  translate}
+    \field{journaltitle}{arXiv preprint arXiv:1409.0473}
+    \field{year}{2014}
   \endentry
 
-  \entry{pubpub2020}{misc}{}
+  \entry{cho2014learning}{article}{}
+    \name{author}{7}{}{%
+      {{hash=CK}{%
+         family={Cho},
+         familyi={C\bibinitperiod},
+         given={Kyunghyun},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=VMB}{%
+         family={Van\bibnamedelima Merri{\"e}nboer},
+         familyi={V\bibinitperiod\bibinitdelim M\bibinitperiod},
+         given={Bart},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=GC}{%
+         family={Gulcehre},
+         familyi={G\bibinitperiod},
+         given={Caglar},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Bahdanau},
+         familyi={B\bibinitperiod},
+         given={Dzmitry},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BF}{%
+         family={Bougares},
+         familyi={B\bibinitperiod},
+         given={Fethi},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=SH}{%
+         family={Schwenk},
+         familyi={S\bibinitperiod},
+         given={Holger},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CKVMBGCBDBFSHBY1}
+    \strng{fullhash}{CKVMBGCBDBFSHBY1}
+    \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{PubPub}
-    \verb{url}
-    \verb https://www.pubpub.org/
-    \endverb
-    \field{journaltitle}{PubPub}
-    \field{year}{2020}
+    \field{title}{Learning phrase representations using RNN encoder-decoder for
+  statistical machine translation}
+    \field{journaltitle}{arXiv preprint arXiv:1406.1078}
+    \field{year}{2014}
   \endentry
 
-  \entry{caiac}{misc}{}
+  \entry{sutskever2014sequence}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SI}{%
+         family={Sutskever},
+         familyi={S\bibinitperiod},
+         given={Ilya},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=VO}{%
+         family={Vinyals},
+         familyi={V\bibinitperiod},
+         given={Oriol},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=LQV}{%
+         family={Le},
+         familyi={L\bibinitperiod},
+         given={Quoc\bibnamedelima V},
+         giveni={Q\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SIVOLQV1}
+    \strng{fullhash}{SIVOLQV1}
+    \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Canadian Artificial Intelligence Association}
-    \verb{url}
-    \verb https://www.caiac.ca/
-    \endverb
-    \field{journaltitle}{CAIAC}
-    \field{year}{2022}
+    \field{title}{Sequence to sequence learning with neural networks}
+    \field{volume}{27}
+    \field{journaltitle}{Advances in neural information processing systems}
+    \field{year}{2014}
   \endentry
 
-  \entry{abramowitz1948handbook}{book}{}
-    \name{author}{2}{}{%
-      {{hash=AM}{%
-         family={Abramowitz},
+  \entry{szegedy2015going}{inproceedings}{}
+    \name{author}{9}{}{%
+      {{hash=SC}{%
+         family={Szegedy},
+         familyi={S\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=LW}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Wei},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=JY}{%
+         family={Jia},
+         familyi={J\bibinitperiod},
+         given={Yangqing},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Sermanet},
+         familyi={S\bibinitperiod},
+         given={Pierre},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Reed},
+         familyi={R\bibinitperiod},
+         given={Scott},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AD}{%
+         family={Anguelov},
          familyi={A\bibinitperiod},
-         given={Milton},
+         given={Dragomir},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=ED}{%
+         family={Erhan},
+         familyi={E\bibinitperiod},
+         given={Dumitru},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=VV}{%
+         family={Vanhoucke},
+         familyi={V\bibinitperiod},
+         given={Vincent},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Rabinovich},
+         familyi={R\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SCLWJYSPRSADEDVVRA1}
+    \strng{fullhash}{SCLWJYSPRSADEDVVRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the IEEE conference on computer vision and
+  pattern recognition}
+    \field{pages}{1\bibrangedash 9}
+    \field{title}{Going deeper with convolutions}
+    \field{year}{2015}
+  \endentry
+
+  \entry{plummer2015flickr30k}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=PBA}{%
+         family={Plummer},
+         familyi={P\bibinitperiod},
+         given={Bryan\bibnamedelima A},
+         giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=WL}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Liwei},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=CCM}{%
+         family={Cervantes},
+         familyi={C\bibinitperiod},
+         given={Chris\bibnamedelima M},
+         giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=CJC}{%
+         family={Caicedo},
+         familyi={C\bibinitperiod},
+         given={Juan\bibnamedelima C},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Hockenmaier},
+         familyi={H\bibinitperiod},
+         given={Julia},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Lazebnik},
+         familyi={L\bibinitperiod},
+         given={Svetlana},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PBAWLCCMCJCHJLS1}
+    \strng{fullhash}{PBAWLCCMCJCHJLS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the IEEE international conference on
+  computer vision}
+    \field{pages}{2641\bibrangedash 2649}
+    \field{title}{Flickr30k entities: Collecting region-to-phrase
+  correspondences for richer image-to-sentence models}
+    \field{year}{2015}
+  \endentry
+
+  \entry{hodosh2013framing}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HM}{%
+         family={Hodosh},
+         familyi={H\bibinitperiod},
+         given={Micah},
          giveni={M\bibinitperiod},
       }}%
-      {{hash=SIA}{%
-         family={Stegun},
-         familyi={S\bibinitperiod},
-         given={Irene\bibnamedelima A},
-         giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod},
+      {{hash=YP}{%
+         family={Young},
+         familyi={Y\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Hockenmaier},
+         familyi={H\bibinitperiod},
+         given={Julia},
+         giveni={J\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {US Government printing office}%
-    }
-    \strng{namehash}{AMSIA1}
-    \strng{fullhash}{AMSIA1}
+    \strng{namehash}{HMYPHJ1}
+    \strng{fullhash}{HMYPHJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Handbook of mathematical functions with formulas, graphs, and
-  mathematical tables}
-    \field{volume}{55}
-    \field{year}{1948}
+    \field{pages}{853\bibrangedash 899}
+    \field{title}{Framing image description as a ranking task: Data, models and
+  evaluation metrics}
+    \field{volume}{47}
+    \field{journaltitle}{Journal of Artificial Intelligence Research}
+    \field{year}{2013}
+  \endentry
+
+  \entry{chen2015microsoft}{article}{}
+    \name{author}{7}{}{%
+      {{hash=CX}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Xinlei},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=FH}{%
+         family={Fang},
+         familyi={F\bibinitperiod},
+         given={Hao},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=LTY}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Tsung-Yi},
+         giveni={T\bibinithyphendelim Y\bibinitperiod},
+      }}%
+      {{hash=VR}{%
+         family={Vedantam},
+         familyi={V\bibinitperiod},
+         given={Ramakrishna},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=GS}{%
+         family={Gupta},
+         familyi={G\bibinitperiod},
+         given={Saurabh},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=DP}{%
+         family={Doll{\'a}r},
+         familyi={D\bibinitperiod},
+         given={Piotr},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=ZCL}{%
+         family={Zitnick},
+         familyi={Z\bibinitperiod},
+         given={C\bibnamedelima Lawrence},
+         giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CXFHLTYVRGSDPZCL1}
+    \strng{fullhash}{CXFHLTYVRGSDPZCL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Microsoft coco captions: Data collection and evaluation
+  server}
+    \field{journaltitle}{arXiv preprint arXiv:1504.00325}
+    \field{year}{2015}
+  \endentry
+
+  \entry{sharma2018conceptual}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=SP}{%
+         family={Sharma},
+         familyi={S\bibinitperiod},
+         given={Piyush},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=DN}{%
+         family={Ding},
+         familyi={D\bibinitperiod},
+         given={Nan},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=GS}{%
+         family={Goodman},
+         familyi={G\bibinitperiod},
+         given={Sebastian},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Soricut},
+         familyi={S\bibinitperiod},
+         given={Radu},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SPDNGSSR1}
+    \strng{fullhash}{SPDNGSSR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the 56th Annual Meeting of the Association
+  for Computational Linguistics (Volume 1: Long Papers)}
+    \field{pages}{2556\bibrangedash 2565}
+    \field{title}{Conceptual captions: A cleaned, hypernymed, image alt-text
+  dataset for automatic image captioning}
+    \field{year}{2018}
+  \endentry
+
+  \entry{xue2020mt5}{article}{}
+    \name{author}{8}{}{%
+      {{hash=XL}{%
+         family={Xue},
+         familyi={X\bibinitperiod},
+         given={Linting},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=CN}{%
+         family={Constant},
+         familyi={C\bibinitperiod},
+         given={Noah},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Roberts},
+         familyi={R\bibinitperiod},
+         given={Adam},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kale},
+         familyi={K\bibinitperiod},
+         given={Mihir},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=ARR}{%
+         family={Al-Rfou},
+         familyi={A\bibinithyphendelim R\bibinitperiod},
+         given={Rami},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Siddhant},
+         familyi={S\bibinitperiod},
+         given={Aditya},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Barua},
+         familyi={B\bibinitperiod},
+         given={Aditya},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RC}{%
+         family={Raffel},
+         familyi={R\bibinitperiod},
+         given={Colin},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{XLCNRAKMARRSABARC1}
+    \strng{fullhash}{XLCNRAKMARRSABARC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{mT5: A massively multilingual pre-trained text-to-text
+  transformer}
+    \field{journaltitle}{arXiv preprint arXiv:2010.11934}
+    \field{year}{2020}
   \endentry
 \enddatalist
 \endinput

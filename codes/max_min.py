@@ -89,7 +89,6 @@ def plot_word_length_distribution(word_lengths, save_file=None):
         plt.savefig(save_file, dpi=300)  # Save the plot to a PNG file
     plt.show()
 
-
 csv_file = 'Flicker30k-fa-en-all.csv'
 column_index = 2
 output_file = 'word_length_distribution.png'

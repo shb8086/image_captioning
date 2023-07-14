@@ -1,12 +1,27 @@
 \documentclass[runningheads]{llncs}
-%
+
 \usepackage[T1]{fontenc}
+\usepackage{graphicx}
+
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguage{farsi}
+
+% Define Arabic font
+\newfontfamily\arabicfont[Script=Arabic]{Amiri}
+
+% \usepackage{polyglossia}
+% \setmainlanguage{english}
+% \setotherlanguage{farsi}
+
+% % % Define Arabic font
+% \newfontfamily\arabicfont[Script=Arabic]{Amiri}
 
 % T1 fonts will be used to generate the final print and online PDFs,
 % so please use T1 fonts in your manuscript whenever possible.
 % Other font encondings may result in incorrect characters.
 %
-\usepackage{graphicx}
+
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
 %
@@ -68,28 +83,64 @@ In addition to the Flickr8k dataset, another notable dataset is the Flickr30k da
 There is another dataset specifically created for the task of image captioning called ``Nocaps'' \cite{Nocaps}. The dataset contains a large-scale collection of images and their corresponding captions. It emphasizes novel and diverse scenes, aiming to expand the range of images and situations that captioning models can handle effectively. Each image in the Nocaps dataset is associated with multiple human-generated captions. The dataset has a total of 166,100 human-generated captionsfor 15,100 images for over 500 unique object classes. The images of this dataset are sourced from the Open Images V4 \cite{Openimages}. The Open Images V4 dataset is a publicly available dataset for large-scale multi-label and multi-class image classification tasks. The OpenImages dataset offers a diverse range of visual concepts, ensuring a comprehensive representation of real-world objects and scenes.The dataset comprises 1.9 million images depicting complex scenes.
 
 Some of the image captioning datasets are provided for a specific case. For example, the VizWiz-Captions dataset \cite{VizWiz} is specifically designed to address the unique challenges faced by people with visual impairments in understanding visual content. The dataset contains approximately 31k images, each accompanied by a human-generated caption. 
-There is an overlap about 54\% between the VizWiz and MS COCO datasets in terms of the provided captions. The images and captions in the VizWiz-Captions dataset were collected through the VizWiz mobile application. This application enables visually impaired users to capture images and ask questions about the content.
+There is an overlap of about 54\% between the VizWiz and MS COCO datasets in terms of the provided captions. The images and captions in the VizWiz-Captions dataset were collected through the VizWiz mobile application. This application enables visually impaired users to capture images and ask questions about the content.
 
-The mentioned datasets have limitations as they provide captions for only English speakers. This lack of other language representation shows the necessity of the development of image captioning datasets for non-English speakers. This will enable a more comprehensive and inclusive environment for advancing image captioning task,and provide a wider accessibility and applicability across different languages.
+The mentioned datasets have limitations, as they provide captions for only English speakers. This lack of other language representation shows the necessity of the development of image captioning datasets for non-English speakers. This will enable a more comprehensive and inclusive environment for advancing image captioning task, and provide a wider accessibility and applicability across different languages.
 
 \subsection{Non-English Image Captioning Datasets}
 As there is currently no specific Persian language image captioning dataset available, when discussing image captioning, the focus of this section is on non-English datasets instead of observing Persian ones. This shows the need for the development of Persian-specific datasets in the field of image captioning.
 
-One of the well known examples of non-English image captioning datasets is the Multi30k dataset \cite{Multi30k}, which is a widely used benchmark dataset for image captioning and multimodal machine translation tasks.It is an extension of the Flickr30k dataset \cite{Flickr30k} and is aimed on generating English-German captions. Exactly like Flicker30k dataset each image has five reference caption but this time in German. Researchers rely on Multi30k to benchmark and advance the performance of models in generating accurate and meaningful captions in both English and German languages.
+One of the well known examples of non-English image captioning datasets is the Multi30k dataset \cite{Multi30k}, which is a widely used benchmark dataset for image captioning and multimodal machine translation tasks.It is an extension of the Flickr30k dataset \cite{Flickr30k} and is aimed at generating English-German captions. Exactly like Flicker30k dataset, each image has five reference captions but this time in German. Researchers rely on Multi30k to benchmark and advance the performance of models in generating accurate and meaningful captions in both English and German languages.
 
 There is a Korean Tourist Spot (KTS) \cite{Korean} which is a multiple modal dataset. It means that the dataset consists of images with textual descriptions, and additional metadata like hashtags and likes. This dataset is specifically tailored for studying Korean tourist spots and includes a total of 10 classes. The KTS dataset was collected from Instagram and followed by a preprocessing step. It comprises a substantial amount of data, with a total of 10k instances. Each of the 10 classes within the dataset is composed of 1k instances.
 
 The ImageCLEF 2018 \cite{ImageCLEF2018} dataset's images and their corresponding captions extracted from biomedical articles on PubMed Central and contains 232,305 pairs of image and caption, which were divided into separate training and test sets. The training set consists of 222,305 pairs, and the test set contains 10,000 pairs. The dataset includes multiple languages commonly used in biomedical research, such as English, Spanish, German, French, etc.
 
-Datasets such as MS COCO and Flickr have multiple unofficial versions available for various languages, but no Persian. To address this gap, having a dataset in Persian could 
-expand the resources for computer vision and image captioning tasks. 
+\subsection{Persian Image Captioning Datasets}
+Datasets such as MS COCO and Flickr have multiple unofficial versions available for various languages, but no Persian. The lack of a Persian language image captioning dataset highlights the need for developing datasets specifically designed for Persian in image captioning tasks. Considering both native and second language speakers, it is estimated that there are approximately 110 to 120 million Persian language speakers worldwide. This includes native speakers from Iran, Afghanistan, and Tajikistan, as well as second language speakers through education, migration, interest, or cultural affinity.
 
-\section{Dataset Collection}
+The collection of an image captioning dataset in Persian holds importance for several reasons. Developing an image captioning dataset in Persian, one of the widely spoken languages in the Middle East and Central Asia, addresses the need for natural language processing in this language for the Persian-speaking population and development in AI research. A Persian image captioning dataset opens doors for various practical applications, including content recommendation systems, image search engines, accessibility tools for visually impaired individuals, and language learning platforms which currently are not supporting this language.
 
-\section{Experiments, Results and Discussions}
+Moreover, creating a Persian image captioning dataset promotes cultural preservation and representation. Persian culture encompasses a rich heritage of art, traditions, and historical landmarks. By focusing on images relevant to Persian culture and context, we capture the essence of Persian identity and contribute to preserving and showcasing its visual heritage. This dataset is valuable for documenting, educating about, and promoting Persian culture.
+
+In conclusion, the collection of an image captioning dataset in Persian addresses the specific linguistic and cultural needs of the Persian-speaking community. It enables development in AI research, and contributes to the preservation and promotion of Persian cultural heritage. By undertaking this endeavor, we aim to bridge the language gap in how images are understood and make AI technologies more accessible and inclusive for everyone.
+
+\section{Dataset Description}
+The following section presents the detailed data collection and analysis procedures. The dataset comprises a collection of images that were exclusively sourced from Flickr30k \cite{Flickr30k}. This section focuses on detailing the process of data collection and labeling, specifically for Persian image captioning. The aim is to provide a comprehensive understanding of the procedure followed to gather the dataset.
+
+To initiate the data collection process, various sources were explored to obtain a diverse range of images suitable for Persian image captioning. Special attention was given to selecting images that represented a broad spectrum of subjects, scenarios, and contexts, ensuring the dataset's comprehensiveness and inclusivity.
+
+\subsection{Image Collection}
+This paper focuses on the collection and annotation of a dataset of images sourced from Flickr30k \cite{Flickr30k} which contains a diverse community of photographers and accordingly photos. Both amateur enthusiasts and seasoned professionals contribute to this platform, resulting in a rich and varied collection of photos. This feature ensures representation across a wide array of visual attributes. These sources were carefully chosen to ensure the availability of high-quality images aligned with the desired scope of the study.
+
+Additionally, these selected images were carefully chosen to contain various situations and were annotated by human annotators. By using some images in the Flickr dataset, we enable multitask learning and transfer learning approaches for image captioning tasks involving two languages (English/ Persian). Both datasets, our collected dataset and Flickr30k, contain annotations provided by human annotators.
+
+\subsection{Annotation Procedure}
+The annotators were instructed to describe the images using words or sentences that accurately depicted the content, focusing on the most important aspects of each image. Annotators fluent in Persian were asked to do a captioning task to ensure the captions accurately reflect the semantic meaning and context of the images, including grammar, syntax, and nuances. Each image in the dataset is annotated with five different captions. Although some captions may have similarities, they are entirely distinct. If duplicate captions were found for an image, one of them was removed, and the annotator was asked to provide a new caption.
+
+To maintain consistency and enhance the overall quality of the dataset, a comprehensive annotation guideline was developed. This guideline provided clear instructions and specifications to the annotators, ensuring uniformity in the captioning process and minimizing variations in style and content. This step was crucial to facilitate the training of machine learning algorithms for automatic image captioning in the Persian language in exact terms. This involved organizing the selected images, collecting relevant metadata, and removing duplicates or any unessential content Through these steps, the dataset was carefully cleaned, standardized, and prepared for further analysis. 
+
+To validate the quality of the captions, we asked evaluators to check some specific criteria. These criteria included checking if the caption accurately described the corresponding image, contained at least one word, is grammatically correct, and does not contain any foreign language or harmful content. 
+
+As a result, by carefully following this data collection and captioning procedure, a robust dataset for Persian image captioning was created which provides a resource for training and evaluating machine learning models in the context of automatic image captioning in the Persian language. This dataset can potentially serve as a bilingual (English/ Persian) dataset for various tasks such as image captioning and image description. 
+
+\subsection{Content Analysis}
+Overall, the captioning task yielded a total of 9696 captions for 1939 unique images. The caption in the collected dataset with the longest length belongs to image number 119364730, containing 55 words.
+
+\begin{farsi}
+\arabicfont\small
+مردی با ظاهری مصمم ، چکش کوچک چوبی را در دست دارد ، در حالی که یک جیب را نشان می دهد و خرچنگ قرمز بزرگی را نشان می دهد ، سخت پوستان قرمز دیگری در دست او نگه داشته می شود در حالی که مرد دیگری نشسته و پشت سر خود مقداری غذا نگه می دارد.
+\end{farsi}
+
+In order to determine the length of a caption, we conducted a thorough analysis of all prepositions and postpositions, such as\begin{farsi}
+\arabicfont\small به\end{farsi} (to),\begin{farsi}
+  \arabicfont\small و \end{farsi}(and),\begin{farsi}
+    \arabicfont\small می \end{farsi}(A non-combining prefix is employed in both the present and imperfect tenses), and others. Additionally, we discovered that the shortest caption length observed was for image 1370615506, consisting of only two words: "نوزادی میخندد" (an infant is smiling) (refer to Fig. 1 and 2 for visual representation).
+
+\section{Experiments, Results, and Discussions}
 
 \section{Conclusion and Future Work}
-In this paper a novel dataset for image captioning presented with a specific focus on Persian annotations and sourced from Flicker30k.
+In this paper, a novel dataset for image captioning presented with a specific focus on Persian annotations and sourced from Flicker30k.
 
 *********** TODO Add experiments and results
 

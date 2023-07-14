@@ -1,0 +1,59 @@
+isntall persian:  1972  code .latexmkrc
+ 1973  sudo apt-get install texlive-xetex
+ 1974  xelatex --version
+ 1975  which xelatex
+ 1976  code .latexmkrc
+ 1977  ./xepersian
+ 1978  latex xepersian.ins
+ 1979  find xepersian.ins
+ 1980  export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
+ 1981  tlmgr install xepersian
+ 1982  exit
+ 1983  sudo tlmgr install xepersian
+ 1984  mpm --install=xepersian
+ 1985  tlmgr --usermode install xepersian
+ 1986  sudo tlmgr install xepersian
+ 1987  wget https://miktex.org/download/ctan/systems/win32/miktex/setup/unix/miktex-<version>-linux-x86_64.tar.bz2
+ 1988  tar -xjf miktex-<version>-linux-x86_64.tar.bz2
+ 1989  cd miktex-<version>
+ 1990  ./install-tl
+ 1991  wget https://miktex.org/download/ctan/systems/win32/miktex/setup/unix/miktex-<version>-linux-x86_64.tar.bz2
+ 1992  wget https://miktex.org/download/ctan/systems/win32/miktex/setup/unix/miktex
+ 1993  sudo apt-get update
+ 1994  sudo apt-get install miktex
+ 1995  sudo tlmgr install xepersian
+ 1996  sudo export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
+ 1997  su - shima
+ 1998  exit
+ 1999  mkdir ~/texmf
+ 2000  export TEXMFHOME=~/texmf
+ 2001  mkdir ~/texmf/tlmgr
+ 2002  ln -s /usr/share/texlive/tlpkg ~/texmf/tlpkg
+ 2003  tlmgr install xepersian
+ 2004  su - shima
+ 2005  clear
+ 2006  sudo apt-get install texmaker texlive-xetex texlive-lang-arabic texlive-latex-recommended texlive-generic-extra
+ 2007  sudo apt update
+ 2008  sudo apt install texmaker
+ 2009  ls
+ 2010  sudo apt install texlive-xetex
+ 2011  sudo apt install texlive-lang-arabic texlive-lang-farsi texlive-fonts-recommended texlive-latex-recommended
+ 2012  sudo apt install texlive-lang-arabic texlive-fonts-recommended texlive-latex-recommended
+ 2013  wget http://mirror.ctan.org/macros/xetex/latex/xepersian.zip
+ 2014  unzip xepersian.zip
+ 2015  cd xepersian
+ 2016  sudo cp -r tex/* /usr/share/texlive/texmf-dist/tex/
+ 2017  sudo mkdir -p /usr/share/texlive/texmf-dist/tex/xepersian
+ 2018  sudo cp *.sty /usr/share/texlive/texmf-dist/tex/xepersian/
+ 2019  sudo mkdir -p /usr/share/texlive/texmf-dist/tex/latex/xepersian
+ 2020  sudo cp *.* /usr/share/texlive/texmf-dist/tex/latex/xepersian/
+ 2021  sudo mktexlsr
+ 2022  sudo updmap-sys --enable Map=xepersian.map
+ 2023  sudo nano /etc/texmf/web2c/updmap.cfg
+ 2024  sudo updmap-sys
+ 2025  sudo mktexlsr
+ 2026  sudo updmap-sys
+ 2027  sudo updmap-sys --syncwithtrees
+ 2028  sudo updmap-sys
+ 2029  sudo mktexlsr
+ 2030  history

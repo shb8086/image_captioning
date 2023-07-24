@@ -2,6 +2,7 @@
 
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage{tabularx}
 
 \usepackage{polyglossia}
 \setmainlanguage{english}
@@ -38,19 +39,21 @@
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
-\author{Shima Baniadamdizaj\inst{1}\orcidID{0000-0003-1678-5108},
-Alexander Breuer\inst{1}}
+\author{Shima Baniadamdizaj\inst{1}\orcidID{0000-1111-2222-3333} \and
+Alexander Breuer\inst{1} }
 %
 \authorrunning{Sh. Baniadamdizaj et al.}
 % First names are abbreviated in the running head.
 % If there are more than two authors, 'et al.' is used.
-%
-\institute{Friedrich Schiller University Jena, Jena, Germany \email{\{shima.bani,alex.breuer\}@uni-jena.de}}
+% 
+\institute{Friedrich Schiller University Jena, Jena, Germany \\
+email{\{shima.bani,alex.breuer\}\@uni-jena.de}}
 %
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
 *********** TODO
+150--250 words.
 
 \keywords{Image Captioning in Persian \and Computer Vision \and Natural language processing \and image-to-text.}
 \end{abstract}
@@ -76,7 +79,7 @@ The machine's ability to perform image captioning has been greatly facilitated b
 \subsection{English Captioned Datasets}
 MS COCO (Microsoft Common Objects in COntext) \cite{MSCOCO} is an extensively used computer vision dataset. It contains a collection of over 164k images, sourced from diverse platforms. The dataset offers comprehensive annotations, including precise bounding boxes for object detection and segmentation masks. The training set consists of approximately 83k images, while the validation and test sets contain around 41k images each. Consequently, the average sentence length of the descriptions is approximately 10 words. The dataset is widely utilized in various computer vision tasks, including object recognition, scene understanding, and image captioning.
 
-Flickr8k \cite{Flickr8k} is another notable computer vision dataset widely used in the field. It is specifically designed for image captioning tasks and consists of a diverse collection of 8k high-quality images sourced from the popular photo-sharing platform Flickr. Each image in the dataset is accompanied by five human-generated captions, providing rich textual descriptions of the visual content. The dataset aims to capture a wide range of scenes, objects, and activities, showcasing the diversity of real-world imagery. Flickr8k has become a resource for training and evaluating image captioning models, enabling researchers to develop algorithms that generate accurate and contextually relevant descriptions for images. The availability of Flickr8k has played a role in advancing the field of image captioning and in natural language understanding and computer vision.
+Flickr8k \cite{Flickr8k} is another notable computer vision dataset widely used in the field. It is specifically designed for image captioning tasks and consists of a diverse collection of 8k high-quality images sourced from the popular photo-sharing platform Flickr. Each image in the dataset is accompanied by five human-generated captions, providing rich textual descriptions of the visual content. The dataset aims to capture a wide range of scenes, objects, and activities, showcasing the diversity of real-world imagery. The Flickr8k dataset has become a resource for training and evaluating image captioning models, enabling researchers to develop algorithms that generate accurate and contextually relevant descriptions for images. The availability of Flickr8k has played a role in advancing the field of image captioning and in natural language understanding and computer vision.
 
 In addition to the Flickr8k dataset, another notable dataset is the Flickr30k dataset. The Flickr30k \cite{Flickr30k} dataset is an extension of Flickr8k, with a larger collection of images and relevant captions. While Flickr8k comprises 8k images, Flickr30k consists of approximately 30k images, making it substantially larger in scale.Both datasets share similarities in terms of their origin, as they are sourced from the popular photo-sharing platform Flickr. They aim to represent diverse scenes, objects, and activities, capturing images in their natural context. Both datasets are accompanied by human-generated captions that provide textual descriptions of the visual content. However, the increased size of the Flickr30k dataset brings several advantages. The increased diversity of content enhances model robustness and generalization in computer vision tasks. The larger number of images in Flickr30k provides a wider representation of real-world scenarios and concepts. This enhanced coverage allows researchers to tackle more complex challenges in object recognition, scene understanding, and image captioning tasks. 
 
@@ -108,12 +111,40 @@ In conclusion, the collection of an image captioning dataset in Persian addresse
 \section{Dataset Description}
 The following section presents the detailed data collection and analysis procedures. The dataset comprises a collection of images that were exclusively sourced from Flickr30k \cite{Flickr30k}. This section focuses on detailing the process of data collection and labeling, specifically for Persian image captioning. The aim is to provide a comprehensive understanding of the procedure followed to gather the dataset.
 
-To initiate the data collection process, various sources were explored to obtain a diverse range of images suitable for Persian image captioning. Special attention was given to selecting images that represented a broad spectrum of subjects, scenarios, and contexts, ensuring the dataset's comprehensiveness and inclusivity.
+To initiate the data collection process, various sources were explored to obtain a diverse range of images suitable for Persian image captioning. Special attention was given to selecting images that represented a broad spectrum of subjects, scenarios, and contexts, ensuring the dataset's comprehensiveness and inclusivity. There is one example from dataset in  Fig.~\ref{fig1}. 
+
+\begin{figure}[htbp]
+\begin{center}
+  \begin{minipage}[t]{0.3\textwidth} 
+    \vspace{0pt}
+    \includegraphics[width=\textwidth]{2656351.jpg}
+  \end{minipage}
+  % \hfill % Add space between the image and the table
+  \begin{minipage}[t]{0.6\textwidth}
+    % \vspace{-\baselineskip} % Remove vertical space before the table
+    \vspace{0pt} % Remove vertical space before the table
+    \begin{tabularx}{\linewidth}{|X|} \hline
+      \begin{farsi} \arabicfont\small دختر جوانی با شلوار قرمز اسنوپی نوزاد بسیار کوچکی را در دامان خود نگه داشته است.\end{farsi} \\ 
+      \hline
+      \begin{farsi} \arabicfont\small دختر کوچک و مو قرمز نوزادی تازه در آغوش گرفته است.\end{farsi} \\ 
+      \hline
+      \begin{farsi} \arabicfont\small دختری کوچک روی کاناپه که نوزادی را در آغوش گرفته است.\end{farsi} \\
+      \hline
+      \begin{farsi} \arabicfont\small یک دختر جوان یک نوزاد گریان را در آغوش گرفته است.\end{farsi} \\
+      \hline
+      \begin{farsi} \arabicfont\small دختربچه ای که نوزادی را در آغوش دارد.\end{farsi} \\
+      \hline
+    \end{tabularx}
+  \end{minipage}
+  \caption{Example image from the dataset with relative captions.}
+  \label{fig1}
+    \end{center}
+\end{figure}
 
 \subsection{Image Collection}
 This paper focuses on the collection and annotation of a dataset of images sourced from Flickr30k \cite{Flickr30k} which contains a diverse community of photographers and accordingly photos. Both amateur enthusiasts and seasoned professionals contribute to this platform, resulting in a rich and varied collection of photos. This feature ensures representation across a wide array of visual attributes. These sources were carefully chosen to ensure the availability of high-quality images aligned with the desired scope of the study.
 
-Additionally, these selected images were carefully chosen to contain various situations and were annotated by human annotators. By using some images in the Flickr dataset, we enable multitask learning and transfer learning approaches for image captioning tasks involving two languages (English/ Persian). Both datasets, our collected dataset and Flickr30k, contain annotations provided by human annotators.
+Additionally, these selected images were carefully chosen to contain various situations and were annotated by human annotators same as the original dataset (Flicker30k). By using some of the images from the Flickr dataset, we enable multitask learning and transfer learning approaches for image captioning tasks involving two languages (English/ Persian).
 
 \subsection{Annotation Procedure}
 The annotators were instructed to describe the images using words or sentences that accurately depicted the content, focusing on the most important aspects of each image. Annotators fluent in Persian were asked to do a captioning task to ensure the captions accurately reflect the semantic meaning and context of the images, including grammar, syntax, and nuances. Each image in the dataset is annotated with five different captions. Although some captions may have similarities, they are entirely distinct. If duplicate captions were found for an image, one of them was removed, and the annotator was asked to provide a new caption.
@@ -122,18 +153,53 @@ To maintain consistency and enhance the overall quality of the dataset, a compre
 
 To validate the quality of the captions, we asked evaluators to check some specific criteria. These criteria included checking if the caption accurately described the corresponding image, contained at least one word, is grammatically correct, and does not contain any foreign language or harmful content. 
 
-As a result, by carefully following this data collection and captioning procedure, a robust dataset for Persian image captioning was created which provides a resource for training and evaluating machine learning models in the context of automatic image captioning in the Persian language. This dataset can potentially serve as a bilingual (English/ Persian) dataset for various tasks such as image captioning and image description. 
+As a result, by carefully following this data collection and captioning procedure, a robust dataset for Persian image captioning was created which provides a resource for training and evaluating machine learning models in the context of automatic image captioning in the Persian language. This dataset can potentially serve as a bilingual (English/ Persian) dataset for various tasks such as image captioning and image description.
 
 \subsection{Content Analysis}
-Overall, the captioning task yielded a total of 9696 captions for 1939 unique images. The caption in the collected dataset with the longest length belongs to image number 119364730, containing 55 words.
+The captioning dataset yielded a total of 51000 captions for 10200 unique images, which means there are five different captions for each image. 
+The dataset consists of four columns. The first column, ``image\_name'',
+contains the name or number of each image from the Flickr30k image dataset. The images are in JPG format and maintain their original sizes from the Flickr dataset. The second column, ``comment\_number'', indicates the number of captions associated with each image, ranging from 0 to 4. Each image has five distinct captions. The third column, ``comment-fa'', stores the Persian comments for each image which is the main contribution of this paper. Finally, the last column, ``comment-en'', contains the English captions imported from the Flickr30k dataset.
+
+As part of the dataset preprocessing, it is important to note that the ``comment-fa'' column does not contain non-Persian alphabet characters. Also, all numbers are written alphabetically rather than using digits. This consideration helps ensure consistent handling and maintain uniformity throughout the dataset. The Prefixes or suffixes are not counted as a word in this dataset for example \begin{farsi} \arabicfont\small "ها"\end{farsi} (plural sign), or \begin{farsi} \arabicfont\small "های"\end{farsi} (plural sign). But pre-positions and post-positions like \begin{farsi} \arabicfont\small "با"\end{farsi} (with), \begin{farsi} \arabicfont\small "از"\end{farsi} (from), or \begin{farsi} \arabicfont\small "و"\end{farsi} (and) are considered as a separate word and are counted. By these considerations the shortest caption length is two words and the longest one includes 77 words. The caption in the collected dataset with the longest length belongs to image number 207344485 (row 16052 in csv file, see Fig.~\ref{fig2}.a), containing 77 words, which is:
 
 \begin{farsi}
 \arabicfont\small
-مردی با ظاهری مصمم ، چکش کوچک چوبی را در دست دارد ، در حالی که یک جیب را نشان می دهد و خرچنگ قرمز بزرگی را نشان می دهد ، سخت پوستان قرمز دیگری در دست او نگه داشته می شود در حالی که مرد دیگری نشسته و پشت سر خود مقداری غذا نگه می دارد.
+"مردی با یک شلوار قرمز و کلاه ایمنی با راه راه‌های سفید در کناره‌ها و یک پیراهن سفید و قرمز روی دوچرخه‌ای کوچک تنها با استفاده از دست‌هایش ایستاده است درحالی که پاهایش در هوا هستند مرد دیگری پیراهن آبی روشن با طرح های آبی تیره به تن دارد شلوار مشکی با نوارهای قرمز در کناره‌ها در همان نزدیکی ایستاده است و به مرد اول اشاره می‌کند و مجسمه کوچک یکی از هفت کوتوله را در دست دارد."
 \end{farsi}
 
+Means: ``A man in red pants and a helmet with white stripes on the sides and a white and red shirt stands on a small bicycle using only his hands while his legs are in the air. Another man wears a light blue shirt with dark blue patterns. Black pants with red stripes on the sides stands nearby, pointing to the first man, holding a small statue of one of the seven dwarfs.''
+
+\begin{figure}
+\includegraphics[width=\textwidth]{long_short.jpg}
+\caption{The example images from dataset with (a)longest and (b)shortest Persian captions.} \label{fig2}
+\end{figure}
+
+The shortest captions just contain two words and there are 15 captions with this length which are in the following row numbers: 5801, 6226, 6466, 12606, 13956, 18942, 19937, 25746, 32061, 34616, 38627, 41049, 42221, 44634, and 47940. One of the examples with the shortest caption length is row 34616 in csv file (see Fig.~\ref{fig2}.b):\begin{farsi}
+\arabicfont\small
+سگ" "خمیازه\end{farsi}
+which means: ``Dog's yawn''.
+
+In the proposed dataset, the average word counts per caption is calculated to be 12.33 words. Additionally, the standard deviation of captions lengths is determined to be 5.19. The standard deviation quantifies the extent of variability or dispersion among the caption lengths based ont eh number of words in the dataset. It provides a measure of how spread out the word lengths are from the average value, 12.33, offering insights into the distribution of word lengths and the overall diversity within the dataset (see Fig.~\ref{fig3}).
+
+The dataset analysis shows a diverse range of word lengths in the captions, spanning from two to 77 words per caption. While no specific pattern emerged, varying frequencies of word lengths have been observed. The most frequently occurring word length was nine words, repeating a substantial number of 4808 times. Additionally, lengths 11 and 10 were also prevalent, each repeating 4730 times. Moreover, length eight was observed with a frequency of 4465 repetitions, while length 12 appeared 4201 times. These findings provide a comprehensive overview of the word length distribution within the dataset, showcasing both the range of word counts and the notable occurrences of specific lengths.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{length_distribution.png}
+    \caption{Distribution of word lengths in captions and number of captions per word length.}
+    \label{fig3}
+  \end{center}
+\end{figure}
+
+In the dataset analysis, it was observed that certain words appeared with high frequency, indicating their significance in the dataset. The 10 most repeated words are as following: word \begin{farsi} \arabicfont\small "یک"\end{farsi} (a/an) appeared the most, occurring 30,100 times, suggesting its prevalence and potential importance within the context. Similarly, the word \begin{farsi} \arabicfont\small "در"\end{farsi} (in) was also highly recurrent, appearing 28,029 times. The words \begin{farsi} \arabicfont\small "با"\end{farsi} (with) and \begin{farsi} \arabicfont\small "و"\end{farsi} (and) followed closely behind with 21,102 and 20,115 occurrences, respectively, indicating their frequent usage.
+
+Furthermore, the word \begin{farsi} \arabicfont\small "که"\end{farsi} (that) appeared 19,285 times, highlighting its significance in connecting clauses or introducing relative pronouns. The word \begin{farsi} \arabicfont\small "است"\end{farsi} (is) occurred 15,473 times, implying its role in expressing existence or attribution. The prepositions\begin{farsi} \arabicfont\small "از"\end{farsi} (from) and \begin{farsi} \arabicfont\small "را"\end{farsi} (particle for direct object) and \begin{farsi} \arabicfont\small "به"\end{farsi} (to) were also among the most repeated words, with 13,109, 9,974, and 9,615 occurrences, respectively, indicating their frequent usage to denote origin, direct object, and destination.
+
+Additionally, the word \begin{farsi} \arabicfont\small "روی"\end{farsi} (on) appeared 8,996 times, suggesting its relevance in referring to surfaces or indicating location. These findings shed light on the prominent words in the dataset, providing valuable insights into the language patterns and themes present within the text.
 
 \section{Experiments, Results, and Discussions}
+
+*********** TODO Add experiments and results
 
 \section{Conclusion and Future Work}
 In this paper, a novel dataset for image captioning presented with a specific focus on Persian annotations and sourced from Flicker30k.
@@ -169,9 +235,6 @@ Young, Peter, et al. "From image descriptions to visual denotations: New similar
 \bibitem{Multi30k}
 Elliott, Desmond, et al. "Multi30k: Multilingual english-german image descriptions." arXiv preprint arXiv:1605.00459 (2016).
 
-\bibitem{VIST}
-Huang, Ting-Hao, et al. "Visual storytelling." Proceedings of the 2016 conference of the North American chapter of the association for computational linguistics: Human language technologies. 2016.
-
 \bibitem{Xue}
 Xue, Linting, et al. "mT5: A massively multilingual pre-trained text-to-text transformer." arXiv preprint arXiv:2010.11934 (2020).
 
@@ -180,6 +243,9 @@ Zoph, Barret, and Kevin Knight. "Multi-source neural translation." arXiv preprin
 
 \bibitem{Rosa}
 Rosa, Guilherme Moraes, et al. "A cost-benefit analysis of cross-lingual transfer methods." arXiv preprint arXiv:2105.06813 (2021).
+
+\bibitem{VIST}
+Huang, Ting-Hao, et al. "Visual storytelling." Proceedings of the 2016 conference of the North American chapter of the association for computational linguistics: Human language technologies. 2016.
 
 \bibitem{Nocaps}
 Agrawal, Harsh, et al. "Nocaps: Novel object captioning at scale." Proceedings of the IEEE/CVF international conference on computer vision. 2019.

@@ -1,13 +1,13 @@
-است: 15472 occurrences
+یک: 30100 occurrences
+در: 28029 occurrences
+با: 21102 occurrences
+و: 20115 occurrences
+که: 19285 occurrences
+است: 15473 occurrences
+از: 13109 occurrences
+را: 9974 occurrences
+به: 9615 occurrences
 روی: 8996 occurrences
-میکند: 8676 occurrences
-مردی: 8581 occurrences
-درحال: 8126 occurrences
-لباس: 6765 occurrences
-مرد: 6488 occurrences
-میکنند: 5303 occurrences
-دارد: 5117 occurrences
-سفید: 4503 occurrences
 
 Minimum word length: 2
 
@@ -17,7 +17,7 @@ Row numbers with minimum word length: [5801, 6226, 6466, 12606, 13956, 18942, 19
 
 Content of the first column for minimum word length: ['1354318519', '1370615506', '1387443857', '1809796012', '193657666', '2165677531', '2197552440', '2346629210', '2504704808', '256085101', '2663977526', '2726157819', '2755314937', '2822689563', '2900274587']
 
-Maximum word length: 75
+Maximum word length: 77
 
 Number of rows with maximum word length: 1
 
@@ -25,13 +25,13 @@ Row numbers with maximum word length: [16052]
 
 Content of the first column for maximum word length: ['207344485']
 
-Average word length: 11.94
+Average word length: 12.33
 
-Standard deviation of word lengths: 4.90
+Standard deviation of word lengths: 5.19
 
 Most Repeated Word Lengths:
-1. Length: 9, Repeats: 5117
-2. Length: 10, Repeats: 5049
-3. Length: 11, Repeats: 4968
-4. Length: 8, Repeats: 4718
-5. Length: 12, Repeats: 4262
+1. Length: 9, Repeats: 4808
+2. Length: 11, Repeats: 4730
+3. Length: 10, Repeats: 4730
+4. Length: 8, Repeats: 4465
+5. Length: 12, Repeats: 4201

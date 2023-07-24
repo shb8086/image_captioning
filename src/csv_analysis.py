@@ -22,7 +22,7 @@ def count_words_in_column(csv_file, column_index):
             if len(row) > column_index:
                 sentence = row[column_index]
                 words = sentence.split()
-                filtered_words = [word for word in words if len(word) >= 2 and word not in ['ها', 'های', 'بی']]
+                filtered_words = [word for word in words if len(word) >= 1 and word not in ['ها', 'های']]
                 word_count = len(filtered_words)
                 if word_count > 0:
                     word_lengths.append(word_count)
@@ -82,9 +82,9 @@ def plot_word_length_distribution(word_lengths, save_file=None):
     x_values = list(word_counts.keys())
     y_values = list(word_counts.values())
     plt.bar(x_values, y_values)
-    plt.xlabel('Number of Words')
-    plt.ylabel('Number of Rows')
-    plt.title('Word Length Distribution')
+    plt.xlabel('Number of Words per caption')
+    plt.ylabel('Number of Captions')
+    plt.title('Caption Length Distribution')
     if save_file:
         plt.savefig(save_file, dpi=300)  # Save the plot to a PNG file
     plt.show()
@@ -113,7 +113,7 @@ def find_most_repeated_words(csv_file_path, column_index, num_words=3):
         for row in csv_reader:
             sentence = row[column_index]
             words = sentence.split()
-            filtered_words = [word for word in words if len(word) >= 3 and word not in ['ها', 'های', 'بی']]
+            filtered_words = [word for word in words if len(word) >= 1 and word not in ['ها', 'های']]
             word_counts.update(filtered_words)
 
     most_repeated_words = word_counts.most_common(num_words)

@@ -1,3 +1,6 @@
 Flicker30k/Images/
 .vscode
 dataset/images
+dataset/train_dir
+dataset/test_dir
+.gitignore

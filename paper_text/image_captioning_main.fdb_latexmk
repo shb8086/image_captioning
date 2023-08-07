@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1689683594 "/media/shima/78F218F6F218B9F8/Private/image_captioning/paper_text/image_captioning_main.tex" "image_captioning_main.pdf" "image_captioning_main" 1689683595
+["pdflatex"] 1691413066 "/media/shima/78F218F6F218B9F8/Private/image_captioning/paper_text/image_captioning_main.tex" "image_captioning_main.pdf" "image_captioning_main" 1691413067
   "/etc/texmf/web2c/texmf.cnf" 1669913362 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/media/shima/78F218F6F218B9F8/Private/image_captioning/paper_text/image_captioning_main.tex" 1689683594 30946 3ddc64f33dc95345a9a9d27673e1bd49 ""
+  "/media/shima/78F218F6F218B9F8/Private/image_captioning/paper_text/image_captioning_main.tex" 1691413066 42541 b55d5969312ad010935e17c2ee2b86c8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -81,11 +81,13 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1689333615 3667525 c7ec1eb941af8a9ed13dae90d7b4ac18 ""
   "2656351.jpg" 1587968098 39720 f09bb26039d5d3e3c8d989b074fdef3c ""
-  "image_captioning_main.aux" 1689683595 14065 eecfb1a8298c1a2a582bcfcc67e4b2bd "pdflatex"
-  "image_captioning_main.tex" 1689683594 30946 3ddc64f33dc95345a9a9d27673e1bd49 ""
+  "elephant.png" 1691407214 564400 d50dcc6dcd0f4658b7bbab612c3e73c8 ""
+  "image_captioning_main.aux" 1691413067 15654 c2cbc836db923a5c268b4fa9bf31912a "pdflatex"
+  "image_captioning_main.tex" 1691413066 42541 b55d5969312ad010935e17c2ee2b86c8 ""
   "length_distribution.png" 1689679540 75893 ef0b661b1bd463999dd5c8894ea60a06 ""
   "llncs.cls" 1662366460 43530 d52f921432ec1a201702604aae613d16 ""
   "long_short.jpg" 1689678848 789605 5685bf397c9fa1d39f668eb7db718de4 ""
+  "loss.png" 1691410136 98365 bd21169e69fa91b05b34c20119f0447e ""
   (generated)
   "image_captioning_main.aux"
   "image_captioning_main.log"

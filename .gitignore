@@ -3,4 +3,6 @@ Flicker30k/Images/
 dataset/images
 dataset/train_dir
 dataset/test_dir
-.gitignore
+.gitignor
+src/train_cache
+src/test_cache

@@ -545,4 +545,10 @@ INPUT long_short.jpg
 INPUT ./length_distribution.png
 INPUT ./length_distribution.png
 INPUT length_distribution.png
+INPUT ./loss.png
+INPUT ./loss.png
+INPUT loss.png
+INPUT ./elephant.png
+INPUT ./elephant.png
+INPUT elephant.png
 INPUT image_captioning_main.aux

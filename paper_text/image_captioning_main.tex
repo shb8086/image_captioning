@@ -70,7 +70,7 @@ The discussed datasets consist of image captions in the English language. Howeve
 
 In light of these considerations, there is a scarcity of available image captioning datasets specifically for the Persian language. However, to address this gap, we have developed a dataset based on the widely used Flickr30k dataset \cite{Flickr30k} for Persian language image captioning. To the best of our knowledge, this dataset represents the first proposed solution for the worldwide Image Captioning problem with Persian captions. The dataset consists of 10,180 image labels randomly selected from Flicker30k and manually captioned by different individuals. Each image is associated with five distinct reference descriptions. The average length of descriptions is 13.3 words, with a standard deviation of 5.5 words. Additionally, it should be noted that the Persian prepositions are considered as an independent word in this dataset and are separated from the next word by space.
 
-*********** TODO add chapters
+This paper comprises five chapters, each vital to exploring Persian image captioning. Chapter 1 introduces the research and stresses the need for a dedicated dataset. Chapter 2 explores motivation, related works, and existing datasets, emphasizing the gap for a Persian dataset. Chapter 3 details dataset collection, annotation, and preprocessing. Chapter 4 presents experiments, discussions, and analyses. Chapter 5 concludes and outlines future prospects. This work contributes a resource for Persian language visual understanding and bridges the gap in image captioning research.
 
 % Chapter 2
 \section{Motivation and Related Works}
@@ -111,7 +111,7 @@ In conclusion, the collection of an image captioning dataset in Persian addresse
 \section{Dataset Description}
 The following section presents the detailed data collection and analysis procedures. The dataset comprises a collection of images that were exclusively sourced from Flickr30k \cite{Flickr30k}. This section focuses on detailing the process of data collection and labeling, specifically for Persian image captioning. The aim is to provide a comprehensive understanding of the procedure followed to gather the dataset.
 
-To initiate the data collection process, various sources were explored to obtain a diverse range of images suitable for Persian image captioning. Special attention was given to selecting images that represented a broad spectrum of subjects, scenarios, and contexts, ensuring the dataset's comprehensiveness and inclusivity. There is one example from dataset in  Fig.~\ref{fig1}. 
+To initiate the data collection process, various sources were explored to obtain a diverse range of images suitable for Persian image captioning. Special attention was given to selecting images that represented a broad spectrum of subjects, scenarios, and contexts, ensuring the dataset's comprehensiveness and inclusivity. There is one example from dataset in Fig.~\ref{fig1}. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -170,8 +170,10 @@ As part of the dataset preprocessing, it is important to note that the ``comment
 Means: ``A man in red pants and a helmet with white stripes on the sides and a white and red shirt stands on a small bicycle using only his hands while his legs are in the air. Another man wears a light blue shirt with dark blue patterns. Black pants with red stripes on the sides stands nearby, pointing to the first man, holding a small statue of one of the seven dwarfs.''
 
 \begin{figure}
-\includegraphics[width=\textwidth]{long_short.jpg}
-\caption{The example images from dataset with (a)longest and (b)shortest Persian captions.} \label{fig2}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{long_short.jpg}
+    \caption{The example images from dataset with (a)longest and (b)shortest Persian captions.} \label{fig2}
+  \end{center}
 \end{figure}
 
 The shortest captions just contain two words and there are 15 captions with this length which are in the following row numbers: 5801, 6226, 6466, 12606, 13956, 18942, 19937, 25746, 32061, 34616, 38627, 41049, 42221, 44634, and 47940. One of the examples with the shortest caption length is row 34616 in csv file (see Fig.~\ref{fig2}.b):\begin{farsi}
@@ -185,7 +187,7 @@ The dataset analysis shows a diverse range of word lengths in the captions, span
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.7\textwidth]{length_distribution.png}
+    \includegraphics[width=0.6\textwidth]{length_distribution.png}
     \caption{Distribution of word lengths in captions and number of captions per word length.}
     \label{fig3}
   \end{center}
@@ -199,13 +201,69 @@ Additionally, the word \begin{farsi} \arabicfont\small "روی"\end{farsi} (on) 
 
 \section{Experiments, Results, and Discussions}
 
-*********** TODO Add experiments and results
+This section presents the detailed experiment conducted to develop and evaluate the Persian Image Captioning dataset and its performance using the MobileNetV3Small image feature extractor. It starts by describing the dataset loading process, preprocessing of captions, and the dataset for training and testing. Next, it elaborates on the image feature extraction technique using the pre-trained MobileNetV3Small model. The extracted image features serve as inputs to the subsequent Persian Image Captioning model.
+
+\subsection{Dataset Preprocessing}
+The dataset is loaded using the Python pathlib module to work with file paths. The function reads the content of captions, which contains image filenames and their corresponding captions in Persian (each image have five different captions). The extracted image filename and caption pairs are stored as a list of tuples. The initial dataset have multiple captions (five captions) for each image. An one-to-one correspondence between images and captions is established, ensuring that each image now corresponds to a single caption. The final dataset contains an equal number of images and captions, enabling efficient training with a clear image-to-caption mapping.
+
+To make it easier to access captions based on the image filename, a Python dictionary is created, which is a specialized dictionary that provides default values for keys that do not exist. In this case, the default value is an empty list. Then iterates through the list of image filename-caption tuples and appends each caption to the list associated with the corresponding image filename key in the dictionary. The content of the training and testing image-caption pairs splits into separate lines and then creates a list of image-caption tuples for both the training and testing sets. Each tuple in these lists contains the image filename and a list of its associated captions.
+
+\textbf{Tokenization:}
+The text tokenization and vectorization process aims to convert raw text captions into numerical sequences, making them suitable for further processing in the Persian Image Captioning model. The TextVectorization layer is employed to achieve this. \textbf{Standardization} is applied to each text caption to perform text. It converts all text to lowercase, removes punctuation, and adds [START] and [END] tokens to indicate the beginning and end of each caption.
+\textbf{Vocabulary Creation:}
+A vocabulary of the top 10000 words is computed using the TextVectorization layer. This vocabulary represents the unique words present in the captions.
+
+\subsection{Image Feature Extractor}
+
+After loading the dataset, an image feature extractor using the MobileNetV3Small model from TensorFlow. MobileNetV3Small is a pre-trained model on the ImageNet dataset for image classification. The final classification layer is disabled, which allows the use of the last layer of feature-maps as image features. The input shape of the images is set to (224, 224, 3).
+
+The input images are resized to a fixed size of (224, 224, 3) to match the input shape expected by the MobileNetV3Small model. The images are then batched with a batch size of 1, resulting in a batched input format of (1, 224, 224, 3) for efficient processing during training. After image preprocessing and batch input, each image is represented as a tensor of shape (1, 7, 7, 576), containing a 7x7 grid of 576 feature maps. These extracted image features will be used to train the Persian Image Captioning model.
+
+\subsection{Transformer-decoder architecture}
+
+The model uses a two-layer Transformer-decoder architecture to generate descriptive captions for input images which consists of several key components: Input, Decoder, and Output. The Input part involves token embedding and positional encoding. The input is responsible for embedding the token IDs and positional information for the input text sequences combine two embeddings. First, the Token Embedding looks up the embedding vector for each token ID from the vocabulary. It uses the Embedding layer from Keras with \texttt{mask\_zero=True} to handle masking for the model. Second, the Positional Embedding looks up an embedding vector for each position in the sequence. It uses the Embedding layer with \texttt{max\_length} as the input dimension and \texttt{depth} as the output dimension. The position embeddings are learned during training, allowing the model to generalize better to longer sequences.
+
+The decoder consists of a stack of DecoderLayers, each containing three sublayers: Causal Self-Attention, Cross Attention (to the input image), and FeedForward. This design enables the model to leverage both the image features and the generated text while generating captions.
+
+The model performs multiclass classification over the output vocabulary to generate descriptive captions for the input images. The output layer's design is not explicitly provided in this section but typically involves a Dense layer followed by a softmax activation function to compute the probability distribution of words in the vocabulary.
+
+\subsection{Model Specifications}
+
+The model is a two-layer Transformer-decoder architecture. The model includes the temperature parameter, which enables interpolation between three distinct decoding modes. These modes consist of Greedy Decoding $temperature = 0.0$, Random Sampling $temperature = 1.0$, and Uniform Random Sampling $temperature > 1.0$.
+
+Before starting the training process, the model needs to be compiled with the necessary settings. The optimizer used for training is \texttt{Adam Optimizer} Which is an extension of the stochastic gradient descent (SGD) optimization algorithm that combines the concepts of adaptive learning rates and momentum. The optmizer is used with a learning rate of $1 \times 10^{-4}$. The loss function used for optimization is  function to calculate the softmax cross-entropy loss between the true labels and the model's predicted logits. It is commonly employed in multi-class classification tasks, where the ground truth labels are represented as integers (sparse labels).
+
+After calculating the initial loss, a mask is created to filter out certain tokens in the input sequence. The mask is constructed based on two conditions: labels != 0 and loss < $1 \mathrm{e} 8$. When calculating the loss, it is ensured to pay attention to the condition loss < $1 \mathrm{e} 8$. This step is crucial as it helps discard artificial and impossibly high losses related to banned tokens. By filtering out these infeasible losses, we ensure that the loss and accuracy computations are more reliable. The purpose of this mask is to discard tokens with a label of 0 (padding tokens) and to handle any numerical issues that might arise from very large losses. Additionally, the model is evaluated during training using the custom metric for accuracy.
+
+The training data is passed to the model, and it is repeated indefinitely using \texttt{repeat()} to ensure enough iterations for the specified number of epochs. The \texttt{steps\_per\_epoch} parameter is set to 100, indicating the number of batches to process in one epoch. The validation data is also passed to the model for evaluation and is similarly repeated using \texttt{repeat()}. The \texttt{validation\_steps} parameter is set to 20, which specifies the number of batches to process during validation in each epoch. The total number of training epochs is set to 100. 
+
+Additionally, to provide feedback during training, we set up a Callback. This callback is responsible for generating captions for the surfer image at the conclusion of each epoch. This way, we can observe the model's progress and evaluate the quality of the generated captions over multiple training iterations. The feedback from this callback assists us in fine-tuning the model and achieving better performance in caption generation.
+
+\subsection{Results}
+
+Following the completion of model training, the progression of loss Fig.~\ref{fig4}.b and accuracy  Fig.~\ref{fig4}.a throughout the training phase. The blue line corresponds to the training results, while the orange line represents the validation results.
+As evident from Fig.~\ref{fig4}, the accuracy attained reaches a maximum of approximately 38\%. It is important to note that this work primarily serves as a representation of the dataset, without further optimization efforts to achieve higher accuracy. Nevertheless, the accuracy results are noteworthy considering the limited enhancements made to the model.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{loss.png}
+  \caption{Training and Validation Performance of the Model. The plot displays the changes in accuracy (a) and loss(b) during the training (blue) and validation (orange) process.} \label{fig4}
+\end{figure}
+
+Surprisingly, when examining the performance on unseen images, the generated captions are relatively satisfactory. The dataset predominantly comprises images of dogs, streets, and humans, which appears to have influenced the model's focus in caption creation. Despite the constraints, the model exhibits promising performance in generating captions relevant to these specific scenarios. In Fig.~\ref{fig5}, an intriguing example is presented, wherein the image depicts an elephant walking on wetlands. The model identifies it as a black dog which is running.The predicated caption for this image in Persian is \begin{farsi}
+\arabicfont\small
+ سیاه سگ یک است دویدن حال در
+\end{farsi} Remarkably, despite the misclassification, the caption generated by the model exhibits impeccable grammar. The figure further includes attention maps, offering valuable insights into the word-by-word caption generation process, despite the model's misperception of the image content.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{elephant.png}
+  \caption{ Predicted caption and attention maps for captioning an image with an elephant walking.} \label{fig5}
+\end{figure}
+
+Furthermore, several additional examples in the dataset highlight the overall accuracy of the provided captions. However, a notable challenge arises from biased images containing specific scenes, leading to misinterpretations by the model. For instance, the model's inability to discern a train from a man or a camera from a machine illustrates the impact of scene biases on the model's comprehension. Addressing these biases becomes imperative to enhance the model's capacity for accurate image captioning in diverse real-world scenarios.
 
 \section{Conclusion and Future Work}
 In this paper, a novel dataset for image captioning presented with a specific focus on Persian annotations and sourced from Flicker30k.
-
-*********** TODO Add experiments and results
-
+In conclusion, the model employed for feature extraction is MobileNetV3Small, coupled with a two-layer transformer decoder network. Despite achieving a modest 38\% accuracy, the model consistently produces grammatically correct captions. Nevertheless, the dataset's limited real-world image representation introduces biases, hindering the model's ability to comprehend certain scenes accurately. To enhance performance, augmenting the dataset with diverse real-world images and exploring more advanced models hold promise for improving accuracy and contextual relevance in image captioning tasks.
 Moving forward, our future plans involve expanding the dataset by including a larger number of images and adding multiple captions per image. This expansion aims to enhance the dataset's diversity and provide researchers with a broader range of data to explore. Additionally, we intend to categorize the images into distinct classes, such as landscapes, humans, and animals, for targeted analysis.
 
 

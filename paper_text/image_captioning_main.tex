@@ -2,34 +2,6 @@
 
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{tabularx}
-
-\usepackage{polyglossia}
-\setmainlanguage{english}
-\setotherlanguage{farsi}
-
-% Define Arabic font
-\newfontfamily\arabicfont[Script=Arabic]{Amiri}
-
-% \usepackage{polyglossia}
-% \setmainlanguage{english}
-% \setotherlanguage{farsi}
-
-% % % Define Arabic font
-% \newfontfamily\arabicfont[Script=Arabic]{Amiri}
-
-% T1 fonts will be used to generate the final print and online PDFs,
-% so please use T1 fonts in your manuscript whenever possible.
-% Other font encondings may result in incorrect characters.
-%
-
-% Used for displaying a sample figure. If possible, figure files should
-% be included in EPS format.
-%
-% If you use the hyperref package, please uncomment the following two lines
-% to display URLs in blue roman font according to Springer's eBook style:
-%\usepackage{color}
-%\renewcommand\UrlFont{\color{blue}\rmfamily}
 %
 \begin{document}
 %
@@ -39,7 +11,7 @@
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
-\author{Shima Baniadamdizaj\inst{1}\orcidID{0000-1111-2222-3333} \and
+\author{Shima Baniadamdizaj\inst{1}\orcidID{0000-0003-1678-5108} \and
 Alexander Breuer\inst{1} }
 %
 \authorrunning{Sh. Baniadamdizaj et al.}
@@ -47,13 +19,13 @@ Alexander Breuer\inst{1} }
 % If there are more than two authors, 'et al.' is used.
 % 
 \institute{Friedrich Schiller University Jena, Jena, Germany \\
-email{\{shima.bani,alex.breuer\}\@uni-jena.de}}
+\email{\{sima.bani, alex.breuer\}\@uni-jena.de}}
 %
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
-*********** TODO
-150--250 words.
+Image captioning, the challenge of describing images through natural language, particularly benefits from deep learning techniques which needs diverse datasets. While existing datasets like Microsoft COCO and Flickr30k offer valuable resources, they are predominantly in English. The Expanding Flicker30k dataset fills this void for the Persian language. With manually curated captions averaging 13.3 words, the dataset captures various visual scenarios. By addressing the absence of Persian captioning resources, this paper contributes to both image captioning and multi-lingual research, fostering improved image understanding and language generation capabilities.
+This paper presents a novel resource for Persian language image captioning. Built upon the Flickr30k dataset, the new collection comprises 51,000 captions corresponding to 10,200 distinct images, providing a crucial dataset for advancing image captioning research in the Persian language. Each picture has five captions in Persian, which helps overcome the lack of non-English captioning datasets and allows for detailed language analysis. The dataset includes columns for image names, comment numbers, Persian captions, and English translations, facilitating bilingual comparisons.
 
 \keywords{Image Captioning in Persian \and Computer Vision \and Natural language processing \and image-to-text.}
 \end{abstract}
@@ -62,13 +34,11 @@ email{\{shima.bani,alex.breuer\}\@uni-jena.de}}
 %
 \section{Introduction}
 % \subsection{A Subsection Sample}
-Image captioning refers to the automated process of describing the content of an image using natural language sentences. While humans can interpret images without explicit descriptions, machines struggle with the task of generating natural and informative captions. They need to understand the semantic relationships between objects in an image, their attributes, and the actions in order to generate accurate and coherent descriptions, which is an effortless task for humans. Additionally, machines need to translate these semantic relations into correct literature. For instance, a suitable caption for an image which has a train and people at a station, may involve describing people either boarding the train or waiting on the platform.
+Image captioning involves the automated process of describing image content using natural language sentences. While humans effortlessly understand images, machines struggle to generate informative captions. They must grasp semantic relationships between objects, attributes, and actions to create coherent descriptions, a task humans find easy. Additionally, machines must convert these semantic relations into accurate literature. For example, an appropriate caption for an image with a train and people at a station might describe people boarding the train or waiting on the platform.
 
-The prevalent methods employed for image captioning predominantly rely on deep learning techniques \cite{Karpathy2015,Vinyals2015,Xu2015,Luo2023}. Deep learning-based image captioning relies on extensive image datasets to train models effectively. The availability of a large volume of diverse images is crucial for capturing complex situations. Although there is a vast array of image sources available through television, the internet, news, and other platforms, the majority of these images lack accompanying descriptions. Various captioned image datasets, such as Microsoft COCO \cite{MSCOCO}, Flickr8k \cite{Flickr8k}, and Flickr30k \cite{Flickr30k}, offer valuable resources for training deep learning models in image captioning tasks. These datasets contain diverse images with human-generated captions, enabling the development of accurate and meaningful captioning models.
+Image captioning predominantly relies on deep learning techniques \cite{Karpathy2015,Vinyals2015,Xu2015,Luo2023}. Successful deep learning-based captioning necessitates vast image datasets for effective model training. Diverse image sources such as TV, internet, and news lack accompanying descriptions. Captioned image datasets like Microsoft COCO \cite{MSCOCO}, Flickr8k \cite{Flickr8k}, and Flickr30k \cite{Flickr30k} provide valuable resources for training. These datasets, comprising diverse images with human-generated captions, facilitate accurate captioning model development.
 
-The discussed datasets consist of image captions in the English language. However, there exists a scarcity of large-scale image captioning datasets available for languages other than English. For instance, the Multi30k dataset \cite{Multi30k}, encompassing English-German captions. Translating existing English datasets into other languages offers an inexpensive approach for training models to generate non-English captions. Studies \cite{Xue,Zoph,Rosa} have specifically shown that employing translated datasets, rather than using originally annotated datasets in the target language, can adversely affect model performance.
-
-In light of these considerations, there is a scarcity of available image captioning datasets specifically for the Persian language. However, to address this gap, we have developed a dataset based on the widely used Flickr30k dataset \cite{Flickr30k} for Persian language image captioning. To the best of our knowledge, this dataset represents the first proposed solution for the worldwide Image Captioning problem with Persian captions. The dataset consists of 10,180 image labels randomly selected from Flicker30k and manually captioned by different individuals. Each image is associated with five distinct reference descriptions. The average length of descriptions is 13.3 words, with a standard deviation of 5.5 words. Additionally, it should be noted that the Persian prepositions are considered as an independent word in this dataset and are separated from the next word by space.
+Despite abundant English datasets, scarcity prevails in large-scale non-English image captioning datasets.For instance, the Multi30k dataset \cite{Multi30k}, encompassing English-German captions. Translating English datasets into other languages offers a cost-effective approach for non-English captions. Studies \cite{Xue,Zoph,Rosa} indicate that translated datasets can impact model performance negatively. Addressing the scarcity of Persian image captioning datasets, we present a dataset based on Flickr30k \cite{Flickr30k}. This dataset of 10,180 images with Persian captions is the first proposed solution for global image captioning in Persian. Each image has five reference descriptions, averaging 13.3 words with a standard deviation of 5.5 words. Notably, Persian prepositions are distinct words separated by spaces.
 
 This paper comprises five chapters, each vital to exploring Persian image captioning. Chapter 1 introduces the research and stresses the need for a dedicated dataset. Chapter 2 explores motivation, related works, and existing datasets, emphasizing the gap for a Persian dataset. Chapter 3 details dataset collection, annotation, and preprocessing. Chapter 4 presents experiments, discussions, and analyses. Chapter 5 concludes and outlines future prospects. This work contributes a resource for Persian language visual understanding and bridges the gap in image captioning research.
 
@@ -77,27 +47,27 @@ This paper comprises five chapters, each vital to exploring Persian image captio
 The machine's ability to perform image captioning has been greatly facilitated by the availability of large-scale annotated datasets. Some well known examples of such datasets in English language are Microsoft COCO \cite{MSCOCO}, Flickr8k \cite{Flickr8k} and Flickr30k \cite{Flickr30k}. Despite the existence of non-English image captioning datasets, such as Multi30k \cite{Multi30k} and VIST \cite{VIST} for English-German and English-Chinese captions, respectively, there is still a noticeable scarcity of Persian language datasets. The availability of large-scale captioning datasets specifically in Persian is limited, which presents a challenge for training models to generate captions in this language.
 
 \subsection{English Captioned Datasets}
-MS COCO (Microsoft Common Objects in COntext) \cite{MSCOCO} is an extensively used computer vision dataset. It contains a collection of over 164k images, sourced from diverse platforms. The dataset offers comprehensive annotations, including precise bounding boxes for object detection and segmentation masks. The training set consists of approximately 83k images, while the validation and test sets contain around 41k images each. Consequently, the average sentence length of the descriptions is approximately 10 words. The dataset is widely utilized in various computer vision tasks, including object recognition, scene understanding, and image captioning.
+MS COCO (Microsoft Common Objects in COntext) \cite{MSCOCO} is a widely used computer vision dataset containing over 164k diverse images. Sourced from various platforms, it offers comprehensive annotations, including precise bounding boxes for object detection and segmentation masks. The dataset's training set comprises approximately 83k images, while both the validation and test sets contain around 41k images each. The average description length is about 10 words. It finds applications in object recognition, scene understanding, and image captioning, contributing significantly to advancements in computer vision research.
 
-Flickr8k \cite{Flickr8k} is another notable computer vision dataset widely used in the field. It is specifically designed for image captioning tasks and consists of a diverse collection of 8k high-quality images sourced from the popular photo-sharing platform Flickr. Each image in the dataset is accompanied by five human-generated captions, providing rich textual descriptions of the visual content. The dataset aims to capture a wide range of scenes, objects, and activities, showcasing the diversity of real-world imagery. The Flickr8k dataset has become a resource for training and evaluating image captioning models, enabling researchers to develop algorithms that generate accurate and contextually relevant descriptions for images. The availability of Flickr8k has played a role in advancing the field of image captioning and in natural language understanding and computer vision.
+Flickr8k \cite{Flickr8k}, another significant computer vision dataset, focuses on image captioning. Curated for this task, it boasts a collection of 8k high-quality images drawn from the popular photo-sharing platform Flickr. Each image is accompanied by five human-generated captions, creating a rich source of textual descriptions for the visual content. This dataset is carefully designed to encompass a wide range of scenes, objects, and activities, showcasing the diverse nature of real-world imagery. It serves as a crucial resource for training and evaluating image captioning models, playing a pivotal role in the development of algorithms that generate contextually relevant and accurate image descriptions. The availability of Flickr8k has played a key role in advancing the realms of image captioning, natural language understanding, and computer vision as a whole.
 
-In addition to the Flickr8k dataset, another notable dataset is the Flickr30k dataset. The Flickr30k \cite{Flickr30k} dataset is an extension of Flickr8k, with a larger collection of images and relevant captions. While Flickr8k comprises 8k images, Flickr30k consists of approximately 30k images, making it substantially larger in scale.Both datasets share similarities in terms of their origin, as they are sourced from the popular photo-sharing platform Flickr. They aim to represent diverse scenes, objects, and activities, capturing images in their natural context. Both datasets are accompanied by human-generated captions that provide textual descriptions of the visual content. However, the increased size of the Flickr30k dataset brings several advantages. The increased diversity of content enhances model robustness and generalization in computer vision tasks. The larger number of images in Flickr30k provides a wider representation of real-world scenarios and concepts. This enhanced coverage allows researchers to tackle more complex challenges in object recognition, scene understanding, and image captioning tasks. 
+Alongside the Flickr8k dataset, there exists a more expansive counterpart called Flickr30k \cite{Flickr30k}. While Flickr8k contains 8,000 images, Flickr30k significantly surpasses it with around 30,000 images, offering a substantial augmentation in scale. Both datasets share Flickr as their source and aim to encompass diverse scenes and objects within their contextual milieu, accompanied by human-generated captions.
+However, Flickr30k's increased size brings several distinct advantages. Its content diversity bolsters the resilience and applicability of computational models across intricate computer vision tasks. The broader range of images covers an array of real-world scenarios and concepts, empowering researchers to tackle intricate challenges in object recognition, scene comprehension, and image captioning. In essence, Flickr30k's expansion not only enriches the dataset but also stimulates comprehensive research and innovative problem-solving.
 
-There is another dataset specifically created for the task of image captioning called ``Nocaps'' \cite{Nocaps}. The dataset contains a large-scale collection of images and their corresponding captions. It emphasizes novel and diverse scenes, aiming to expand the range of images and situations that captioning models can handle effectively. Each image in the Nocaps dataset is associated with multiple human-generated captions. The dataset has a total of 166,100 human-generated captionsfor 15,100 images for over 500 unique object classes. The images of this dataset are sourced from the Open Images V4 \cite{Openimages}. The Open Images V4 dataset is a publicly available dataset for large-scale multi-label and multi-class image classification tasks. The OpenImages dataset offers a diverse range of visual concepts, ensuring a comprehensive representation of real-world objects and scenes.The dataset comprises 1.9 million images depicting complex scenes.
+"Nocaps" \cite{Nocaps} emerges as a dedicated dataset for the domain of image captioning. It sets its focus on the realm of novel and diverse scenes, aiming to expand the horizons of captioning models in handling an even wider array of images and contexts effectively. The dataset encompasses a vast collection of images, each coupled with multiple human-generated captions. A grand total of 166,100 captions accompany 15,100 images, spanning over 500 unique object classes. These images are sourced from the Open Images V4 \cite{Openimages}, a publicly available dataset tailored for large-scale multi-label and multi-class image classification tasks. Open Images V4 enriches the dataset with a diverse spectrum of visual concepts, guaranteeing a comprehensive representation of real-world objects and scenes. This broader scope is cemented by the dataset's impressive compilation of 1.9 million images, each capturing complex scenes.
 
-Some of the image captioning datasets are provided for a specific case. For example, the VizWiz-Captions dataset \cite{VizWiz} is specifically designed to address the unique challenges faced by people with visual impairments in understanding visual content. The dataset contains approximately 31k images, each accompanied by a human-generated caption. 
-There is an overlap of about 54\% between the VizWiz and MS COCO datasets in terms of the provided captions. The images and captions in the VizWiz-Captions dataset were collected through the VizWiz mobile application. This application enables visually impaired users to capture images and ask questions about the content.
+Some datasets cater to specific use cases. The VizWiz-Captions dataset \cite{VizWiz}, for instance, is meticulously crafted to address the distinct challenges faced by individuals with visual impairments when engaging with visual content. The dataset boasts an assemblage of approximately 31k images, with each image complemented by a human-generated caption. Notably, the VizWiz and MS COCO datasets exhibit an overlap of about 54\% concerning the provided captions. Images and captions for the VizWiz-Captions dataset stem from the VizWiz mobile application, a platform that empowers visually impaired users to capture images and inquire about content through questions. This unique dataset is indispensable for driving advancements in accessibility and inclusivity within the realm of computer vision and natural language processing.
 
 The mentioned datasets have limitations, as they provide captions for only English speakers. This lack of other language representation shows the necessity of the development of image captioning datasets for non-English speakers. This will enable a more comprehensive and inclusive environment for advancing image captioning task, and provide a wider accessibility and applicability across different languages.
 
 \subsection{Non-English Image Captioning Datasets}
-As there is currently no specific Persian language image captioning dataset available, when discussing image captioning, the focus of this section is on non-English datasets instead of observing Persian ones. This shows the need for the development of Persian-specific datasets in the field of image captioning.
+In the context of lacking a Persian image captioning dataset, this section focuses on non-English alternatives, emphasizing the need for Persian-specific datasets.
 
-One of the well known examples of non-English image captioning datasets is the Multi30k dataset \cite{Multi30k}, which is a widely used benchmark dataset for image captioning and multimodal machine translation tasks.It is an extension of the Flickr30k dataset \cite{Flickr30k} and is aimed at generating English-German captions. Exactly like Flicker30k dataset, each image has five reference captions but this time in German. Researchers rely on Multi30k to benchmark and advance the performance of models in generating accurate and meaningful captions in both English and German languages.
+The Multi30k dataset \cite{Multi30k} stands as a prime example. Renowned for image captioning and multimodal translation, it extends Flickr30k \cite{Flickr30k}, offering English-German captions. This aids in refining captioning models for both languages.
 
-There is a Korean Tourist Spot (KTS) \cite{Korean} which is a multiple modal dataset. It means that the dataset consists of images with textual descriptions, and additional metadata like hashtags and likes. This dataset is specifically tailored for studying Korean tourist spots and includes a total of 10 classes. The KTS dataset was collected from Instagram and followed by a preprocessing step. It comprises a substantial amount of data, with a total of 10k instances. Each of the 10 classes within the dataset is composed of 1k instances.
+Another case is the Korean Tourist Spot (KTS) \cite{Korean} dataset, rich in images, textual descriptions, hashtags, and likes. It's customized for exploring Korean tourist spots, with 10 classes and 10,000 instances sourced from Instagram.
 
-The ImageCLEF 2018 \cite{ImageCLEF2018} dataset's images and their corresponding captions extracted from biomedical articles on PubMed Central and contains 232,305 pairs of image and caption, which were divided into separate training and test sets. The training set consists of 222,305 pairs, and the test set contains 10,000 pairs. The dataset includes multiple languages commonly used in biomedical research, such as English, Spanish, German, French, etc.
+Moreover, the ImageCLEF 2018 \cite{ImageCLEF2018} dataset is significant. With 232,305 biomedical image-caption pairs from PubMed Central, it's partitioned into training (222,305 pairs) and test (10,000 pairs) sets. Notably, it spans various languages used in biomedical research, enhancing its utility in diverse linguistic contexts.
 
 \subsection{Persian Image Captioning Datasets}
 Datasets such as MS COCO and Flickr have multiple unofficial versions available for various languages, but no Persian. The lack of a Persian language image captioning dataset highlights the need for developing datasets specifically designed for Persian in image captioning tasks. Considering both native and second language speakers, it is estimated that there are approximately 110 to 120 million Persian language speakers worldwide. This includes native speakers from Iran, Afghanistan, and Tajikistan, as well as second language speakers through education, migration, interest, or cultural affinity.
@@ -111,35 +81,14 @@ In conclusion, the collection of an image captioning dataset in Persian addresse
 \section{Dataset Description}
 The following section presents the detailed data collection and analysis procedures. The dataset comprises a collection of images that were exclusively sourced from Flickr30k \cite{Flickr30k}. This section focuses on detailing the process of data collection and labeling, specifically for Persian image captioning. The aim is to provide a comprehensive understanding of the procedure followed to gather the dataset.
 
-To initiate the data collection process, various sources were explored to obtain a diverse range of images suitable for Persian image captioning. Special attention was given to selecting images that represented a broad spectrum of subjects, scenarios, and contexts, ensuring the dataset's comprehensiveness and inclusivity. There is one example from dataset in Fig.~\ref{fig1}. 
+To initiate the data collection process, various sources were explored to obtain a diverse range of images suitable for Persian image captioning. Special attention was given to selecting images that represented a broad spectrum of subjects, scenarios, and contexts, ensuring the dataset's comprehensiveness and inclusivity.
+% There is one example from dataset in Fig.~\ref{fig1}. 
 
-\begin{figure}[htbp]
-\begin{center}
-  \begin{minipage}[t]{0.3\textwidth} 
-    \vspace{0pt}
-    \includegraphics[width=\textwidth]{2656351.jpg}
-  \end{minipage}
-  % \hfill % Add space between the image and the table
-  \begin{minipage}[t]{0.6\textwidth}
-    % \vspace{-\baselineskip} % Remove vertical space before the table
-    \vspace{0pt} % Remove vertical space before the table
-    \begin{tabularx}{\linewidth}{|X|} \hline
-      \begin{farsi} \arabicfont\small دختر جوانی با شلوار قرمز اسنوپی نوزاد بسیار کوچکی را در دامان خود نگه داشته است.\end{farsi} \\ 
-      \hline
-      \begin{farsi} \arabicfont\small دختر کوچک و مو قرمز نوزادی تازه در آغوش گرفته است.\end{farsi} \\ 
-      \hline
-      \begin{farsi} \arabicfont\small دختری کوچک روی کاناپه که نوزادی را در آغوش گرفته است.\end{farsi} \\
-      \hline
-      \begin{farsi} \arabicfont\small یک دختر جوان یک نوزاد گریان را در آغوش گرفته است.\end{farsi} \\
-      \hline
-      \begin{farsi} \arabicfont\small دختربچه ای که نوزادی را در آغوش دارد.\end{farsi} \\
-      \hline
-    \end{tabularx}
-  \end{minipage}
-  \caption{Example image from the dataset with relative captions.}
-  \label{fig1}
-    \end{center}
-\end{figure}
+% \begin{figure}[htbp]
+%   \includegraphics[width=\textwidth]{fig1.png}
+%   \caption{Example image from the dataset with relative captions.}
+%   \label{fig1}
+% \end{figure}
 
 \subsection{Image Collection}
 This paper focuses on the collection and annotation of a dataset of images sourced from Flickr30k \cite{Flickr30k} which contains a diverse community of photographers and accordingly photos. Both amateur enthusiasts and seasoned professionals contribute to this platform, resulting in a rich and varied collection of photos. This feature ensures representation across a wide array of visual attributes. These sources were carefully chosen to ensure the availability of high-quality images aligned with the desired scope of the study.
@@ -156,16 +105,20 @@ To validate the quality of the captions, we asked evaluators to check some speci
 As a result, by carefully following this data collection and captioning procedure, a robust dataset for Persian image captioning was created which provides a resource for training and evaluating machine learning models in the context of automatic image captioning in the Persian language. This dataset can potentially serve as a bilingual (English/ Persian) dataset for various tasks such as image captioning and image description.
 
 \subsection{Content Analysis}
-The captioning dataset yielded a total of 51000 captions for 10200 unique images, which means there are five different captions for each image. 
-The dataset consists of four columns. The first column, ``image\_name'',
-contains the name or number of each image from the Flickr30k image dataset. The images are in JPG format and maintain their original sizes from the Flickr dataset. The second column, ``comment\_number'', indicates the number of captions associated with each image, ranging from 0 to 4. Each image has five distinct captions. The third column, ``comment-fa'', stores the Persian comments for each image which is the main contribution of this paper. Finally, the last column, ``comment-en'', contains the English captions imported from the Flickr30k dataset.
+The captioning dataset encompasses 51,000 captions for 10,200 unique images, featuring five distinct captions per image. The dataset is organized into four columns:
 
-As part of the dataset preprocessing, it is important to note that the ``comment-fa'' column does not contain non-Persian alphabet characters. Also, all numbers are written alphabetically rather than using digits. This consideration helps ensure consistent handling and maintain uniformity throughout the dataset. The Prefixes or suffixes are not counted as a word in this dataset for example \begin{farsi} \arabicfont\small "ها"\end{farsi} (plural sign), or \begin{farsi} \arabicfont\small "های"\end{farsi} (plural sign). But pre-positions and post-positions like \begin{farsi} \arabicfont\small "با"\end{farsi} (with), \begin{farsi} \arabicfont\small "از"\end{farsi} (from), or \begin{farsi} \arabicfont\small "و"\end{farsi} (and) are considered as a separate word and are counted. By these considerations the shortest caption length is two words and the longest one includes 77 words. The caption in the collected dataset with the longest length belongs to image number 207344485 (row 16052 in csv file, see Fig.~\ref{fig2}.a), containing 77 words, which is:
+\begin{enumerate}
+    \item The \texttt{image\_name} column contains image identifiers from the Flickr30k dataset, maintaining original JPG formats and sizes.
+    \item \texttt{comment\_number} indicates the count of captions per image, ranging from 0 to 4. Each image hosts five distinct captions.
+    \item Persian comments are stored in the \texttt{comment-fa} column, a pivotal contribution of this study.
+    \item The \texttt{comment-en} column houses English captions, sourced from the Flickr30k dataset.
+\end{enumerate}
 
-\begin{farsi}
-\arabicfont\small
-"مردی با یک شلوار قرمز و کلاه ایمنی با راه راه‌های سفید در کناره‌ها و یک پیراهن سفید و قرمز روی دوچرخه‌ای کوچک تنها با استفاده از دست‌هایش ایستاده است درحالی که پاهایش در هوا هستند مرد دیگری پیراهن آبی روشن با طرح های آبی تیره به تن دارد شلوار مشکی با نوارهای قرمز در کناره‌ها در همان نزدیکی ایستاده است و به مرد اول اشاره می‌کند و مجسمه کوچک یکی از هفت کوتوله را در دست دارد."
-\end{farsi}
+During preprocessing, it's important to highlight that the \texttt{comment-fa} column exclusively contains Persian alphabet characters. Numerals are presented in their spelled-out form, ensuring uniformity. Non-word components such as plural indicators aren't included in the word count, while prepositions like "with," "from," or "and" are considered separate words. Caption lengths vary between two and 77 words, with the lengthiest caption attributed to image number 207344485 (as shown in Fig.~\ref{fig2}), spanning 77 words which is:
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\textwidth]{fig2.png}
+\end{figure}
 
 Means: ``A man in red pants and a helmet with white stripes on the sides and a white and red shirt stands on a small bicycle using only his hands while his legs are in the air. Another man wears a light blue shirt with dark blue patterns. Black pants with red stripes on the sides stands nearby, pointing to the first man, holding a small statue of one of the seven dwarfs.''
 
@@ -176,10 +129,7 @@ Means: ``A man in red pants and a helmet with white stripes on the sides and a w
   \end{center}
 \end{figure}
 
-The shortest captions just contain two words and there are 15 captions with this length which are in the following row numbers: 5801, 6226, 6466, 12606, 13956, 18942, 19937, 25746, 32061, 34616, 38627, 41049, 42221, 44634, and 47940. One of the examples with the shortest caption length is row 34616 in csv file (see Fig.~\ref{fig2}.b):\begin{farsi}
-\arabicfont\small
-سگ" "خمیازه\end{farsi}
-which means: ``Dog's yawn''.
+The shortest captions just contain two words and there are 15 captions with this length which are in the following row numbers: 5801, 6226, 6466, 12606, 13956, 18942, 19937, 25746, 32061, 34616, 38627, 41049, 42221, 44634, and 47940. One of the examples with the shortest caption length is row 34616 in csv file (see Fig.~\ref{fig2}.b): ``Dog's yawn''.
 
 In the proposed dataset, the average word counts per caption is calculated to be 12.33 words. Additionally, the standard deviation of captions lengths is determined to be 5.19. The standard deviation quantifies the extent of variability or dispersion among the caption lengths based ont eh number of words in the dataset. It provides a measure of how spread out the word lengths are from the average value, 12.33, offering insights into the distribution of word lengths and the overall diversity within the dataset (see Fig.~\ref{fig3}).
 
@@ -192,52 +142,50 @@ The dataset analysis shows a diverse range of word lengths in the captions, span
     \label{fig3}
   \end{center}
 \end{figure}
+\vspace{-10pt}
 
-In the dataset analysis, it was observed that certain words appeared with high frequency, indicating their significance in the dataset. The 10 most repeated words are as following: word \begin{farsi} \arabicfont\small "یک"\end{farsi} (a/an) appeared the most, occurring 30,100 times, suggesting its prevalence and potential importance within the context. Similarly, the word \begin{farsi} \arabicfont\small "در"\end{farsi} (in) was also highly recurrent, appearing 28,029 times. The words \begin{farsi} \arabicfont\small "با"\end{farsi} (with) and \begin{farsi} \arabicfont\small "و"\end{farsi} (and) followed closely behind with 21,102 and 20,115 occurrences, respectively, indicating their frequent usage.
+In the dataset analysis, it was observed that certain words appeared with high frequency, indicating their significance in the dataset. The 10 most repeated words are as following: word (a/an) appeared the most, occurring 30,100 times, suggesting its prevalence and potential importance within the context. Similarly, the word (in) was also highly recurrent, appearing 28,029 times. The words (with) and (and) followed closely behind with 21,102 and 20,115 occurrences, respectively, indicating their frequent usage.
 
-Furthermore, the word \begin{farsi} \arabicfont\small "که"\end{farsi} (that) appeared 19,285 times, highlighting its significance in connecting clauses or introducing relative pronouns. The word \begin{farsi} \arabicfont\small "است"\end{farsi} (is) occurred 15,473 times, implying its role in expressing existence or attribution. The prepositions\begin{farsi} \arabicfont\small "از"\end{farsi} (from) and \begin{farsi} \arabicfont\small "را"\end{farsi} (particle for direct object) and \begin{farsi} \arabicfont\small "به"\end{farsi} (to) were also among the most repeated words, with 13,109, 9,974, and 9,615 occurrences, respectively, indicating their frequent usage to denote origin, direct object, and destination.
+Furthermore, the word (that) appeared 19,285 times, highlighting its significance in connecting clauses or introducing relative pronouns. The word (is) occurred 15,473 times, implying its role in expressing existence or attribution. The prepositions (from) and (a particle for direct object) and (to) were also among the most repeated words, with 13,109, 9,974, and 9,615 occurrences, respectively, indicating their frequent usage to denote origin, direct object, and destination.
 
-Additionally, the word \begin{farsi} \arabicfont\small "روی"\end{farsi} (on) appeared 8,996 times, suggesting its relevance in referring to surfaces or indicating location. These findings shed light on the prominent words in the dataset, providing valuable insights into the language patterns and themes present within the text.
+Additionally, the word (on) appeared 8,996 times, suggesting its relevance in referring to surfaces or indicating location. These findings shed light on the prominent words in the dataset, providing valuable insights into the language patterns and themes present within the text.
 
 \section{Experiments, Results, and Discussions}
 
 This section presents the detailed experiment conducted to develop and evaluate the Persian Image Captioning dataset and its performance using the MobileNetV3Small image feature extractor. It starts by describing the dataset loading process, preprocessing of captions, and the dataset for training and testing. Next, it elaborates on the image feature extraction technique using the pre-trained MobileNetV3Small model. The extracted image features serve as inputs to the subsequent Persian Image Captioning model.
 
 \subsection{Dataset Preprocessing}
-The dataset is loaded using the Python pathlib module to work with file paths. The function reads the content of captions, which contains image filenames and their corresponding captions in Persian (each image have five different captions). The extracted image filename and caption pairs are stored as a list of tuples. The initial dataset have multiple captions (five captions) for each image. An one-to-one correspondence between images and captions is established, ensuring that each image now corresponds to a single caption. The final dataset contains an equal number of images and captions, enabling efficient training with a clear image-to-caption mapping.
+The dataset loading utilizes the Python pathlib module, effectively handling file paths. The function extracts content from captions, containing both image filenames and their corresponding Persian captions (five per image). These extracted pairs are organized as tuples, establishing a seamless connection between images and their captions. This alignment ensures precise one-to-one correspondence, enabling streamlined and effective training.
 
-To make it easier to access captions based on the image filename, a Python dictionary is created, which is a specialized dictionary that provides default values for keys that do not exist. In this case, the default value is an empty list. Then iterates through the list of image filename-caption tuples and appends each caption to the list associated with the corresponding image filename key in the dictionary. The content of the training and testing image-caption pairs splits into separate lines and then creates a list of image-caption tuples for both the training and testing sets. Each tuple in these lists contains the image filename and a list of its associated captions.
+To simplify the retrieval of captions based on image filenames, a specialized Python dictionary is employed. It systematically iterates through the image-caption tuples, appending each caption to the list associated with the relevant image filename key within the dictionary.
 
-\textbf{Tokenization:}
-The text tokenization and vectorization process aims to convert raw text captions into numerical sequences, making them suitable for further processing in the Persian Image Captioning model. The TextVectorization layer is employed to achieve this. \textbf{Standardization} is applied to each text caption to perform text. It converts all text to lowercase, removes punctuation, and adds [START] and [END] tokens to indicate the beginning and end of each caption.
-\textbf{Vocabulary Creation:}
-A vocabulary of the top 10000 words is computed using the TextVectorization layer. This vocabulary represents the unique words present in the captions.
+Transitioning to text processing, the pivotal tokenization and vectorization process takes center stage. This transformative procedure converts raw text captions into numerical sequences, aligning them for further processing within the Persian Image Captioning model. This task is executed using the TextVectorization layer. Additionally, a layer of standardization is applied to every text caption. This encompasses conversion to lowercase, punctuation removal, and incorporation of \texttt{[START]} and \texttt{[END]} tokens to distinctly mark the inception and conclusion of each caption.
+
+An integral aspect of this preprocessing journey involves vocabulary creation. A vocabulary encompassing the top 10,000 words is established via the TextVectorization layer. This vocabulary constitutes a comprehensive representation of the unique words embedded within the captions, providing a pivotal foundation for subsequent processing stages.
 
 \subsection{Image Feature Extractor}
 
-After loading the dataset, an image feature extractor using the MobileNetV3Small model from TensorFlow. MobileNetV3Small is a pre-trained model on the ImageNet dataset for image classification. The final classification layer is disabled, which allows the use of the last layer of feature-maps as image features. The input shape of the images is set to (224, 224, 3).
-
-The input images are resized to a fixed size of (224, 224, 3) to match the input shape expected by the MobileNetV3Small model. The images are then batched with a batch size of 1, resulting in a batched input format of (1, 224, 224, 3) for efficient processing during training. After image preprocessing and batch input, each image is represented as a tensor of shape (1, 7, 7, 576), containing a 7x7 grid of 576 feature maps. These extracted image features will be used to train the Persian Image Captioning model.
+After loading the dataset, images are processed through the MobileNetV3Small model, a pre-trained model for image classification. The classification layer is turned off, using the last layer's feature-maps as image features. Images are resized to (224x224x3), then batched to (1x224x224x3) for efficient training. Each image becomes a tensor of shape (1x7x7x576), with a grid of 576 feature maps. These features train the Persian Image Captioning model.
 
 \subsection{Transformer-decoder architecture}
 
-The model uses a two-layer Transformer-decoder architecture to generate descriptive captions for input images which consists of several key components: Input, Decoder, and Output. The Input part involves token embedding and positional encoding. The input is responsible for embedding the token IDs and positional information for the input text sequences combine two embeddings. First, the Token Embedding looks up the embedding vector for each token ID from the vocabulary. It uses the Embedding layer from Keras with \texttt{mask\_zero=True} to handle masking for the model. Second, the Positional Embedding looks up an embedding vector for each position in the sequence. It uses the Embedding layer with \texttt{max\_length} as the input dimension and \texttt{depth} as the output dimension. The position embeddings are learned during training, allowing the model to generalize better to longer sequences.
+The model employs a two-layer Transformer-decoder structure to create captions for input images, comprising key components: Input, Decoder, and Output. The Input involves token embedding and positional encoding. It embeds token IDs and positional data for input text sequences, blending two embeddings. First, Token Embedding retrieves the embedding vector for each token ID using Keras' Embedding layer with \texttt{mask\_zero=True}. Second, Positional Embedding retrieves an embedding vector for each sequence position using the Embedding layer with \texttt{max\_length} as input dimension and \texttt{depth} as output dimension. Position embeddings are learned during training, aiding the model in generalizing to longer sequences.
 
-The decoder consists of a stack of DecoderLayers, each containing three sublayers: Causal Self-Attention, Cross Attention (to the input image), and FeedForward. This design enables the model to leverage both the image features and the generated text while generating captions.
+The decoder has DecoderLayers, each with three sublayers: Causal Self-Attention, Cross Attention (to input image), and FeedForward. This allows the model to use image features and generated text while producing captions.
 
-The model performs multiclass classification over the output vocabulary to generate descriptive captions for the input images. The output layer's design is not explicitly provided in this section but typically involves a Dense layer followed by a softmax activation function to compute the probability distribution of words in the vocabulary.
+The model does multiclass classification over the output vocabulary to create captions for input images. The output layer's design is not fully provided here but usually includes a Dense layer followed by softmax activation to compute the word probability distribution in the vocabulary.
 
 \subsection{Model Specifications}
 
-The model is a two-layer Transformer-decoder architecture. The model includes the temperature parameter, which enables interpolation between three distinct decoding modes. These modes consist of Greedy Decoding $temperature = 0.0$, Random Sampling $temperature = 1.0$, and Uniform Random Sampling $temperature > 1.0$.
+The model employs a two-layer Transformer-decoder structure and incorporates a temperature parameter that facilitates blending among three decoding methods: Greedy Decoding (temperature = 0.0), Random Sampling (temperature = 1.0), and Uniform Random Sampling (temperature > 1.0).
 
-Before starting the training process, the model needs to be compiled with the necessary settings. The optimizer used for training is \texttt{Adam Optimizer} Which is an extension of the stochastic gradient descent (SGD) optimization algorithm that combines the concepts of adaptive learning rates and momentum. The optmizer is used with a learning rate of $1 \times 10^{-4}$. The loss function used for optimization is  function to calculate the softmax cross-entropy loss between the true labels and the model's predicted logits. It is commonly employed in multi-class classification tasks, where the ground truth labels are represented as integers (sparse labels).
+Before commencing training, the model necessitates compilation with specific settings. The chosen optimizer is the \texttt{Adam Optimizer}, an extended version of stochastic gradient descent (SGD), amalgamating adaptive learning rates and momentum. A learning rate of $1 \times 10^{-4}$ is employed. The optimization process employs the softmax cross-entropy loss to gauge dissimilarity between true labels and model-predicted logits. Common in multi-class classification tasks, this function accommodates integer-based ground truth labels.
 
-After calculating the initial loss, a mask is created to filter out certain tokens in the input sequence. The mask is constructed based on two conditions: labels != 0 and loss < $1 \mathrm{e} 8$. When calculating the loss, it is ensured to pay attention to the condition loss < $1 \mathrm{e} 8$. This step is crucial as it helps discard artificial and impossibly high losses related to banned tokens. By filtering out these infeasible losses, we ensure that the loss and accuracy computations are more reliable. The purpose of this mask is to discard tokens with a label of 0 (padding tokens) and to handle any numerical issues that might arise from very large losses. Additionally, the model is evaluated during training using the custom metric for accuracy.
+Following initial loss calculation, a mask is generated to sift out select tokens within the input sequence. The mask hinges on two criteria: labels not equal to 0 and loss less than $1 \mathrm{e} 8$. Ensuring attention to the condition loss < $1 \mathrm{e} 8$ during loss calculation is pivotal; it discards implausibly high losses tied to proscribed tokens. This curation thwarts inconceivable losses, bolstering reliability in loss and accuracy computation. This mask primarily excludes tokens with a label of 0 (padding tokens) and manages numerical predicaments tied to excessive losses. Furthermore, model assessment in training employs a customized accuracy metric.
 
-The training data is passed to the model, and it is repeated indefinitely using \texttt{repeat()} to ensure enough iterations for the specified number of epochs. The \texttt{steps\_per\_epoch} parameter is set to 100, indicating the number of batches to process in one epoch. The validation data is also passed to the model for evaluation and is similarly repeated using \texttt{repeat()}. The \texttt{validation\_steps} parameter is set to 20, which specifies the number of batches to process during validation in each epoch. The total number of training epochs is set to 100. 
+Training data is fed into the model, iterated indefinitely using \texttt{repeat()} to satisfy epoch requirements. Within each epoch, 100 batches are processed, denoted by the \texttt{steps\_per\_epoch} parameter. Validation data similarly undergoes repeated processing, with the \texttt{validation\_steps} parameter set at 20 per epoch. Training encompasses a total of 100 epochs.
 
-Additionally, to provide feedback during training, we set up a Callback. This callback is responsible for generating captions for the surfer image at the conclusion of each epoch. This way, we can observe the model's progress and evaluate the quality of the generated captions over multiple training iterations. The feedback from this callback assists us in fine-tuning the model and achieving better performance in caption generation.
+To offer real-time insight during training, a Callback mechanism is implemented. Post each epoch, this Callback generates captions for the surfer image, affording assessment of caption quality across multiple iterations. Insights from this Callback facilitate model refinement and progress evaluation, refining caption generation performance.
 
 \subsection{Results}
 
@@ -249,10 +197,7 @@ As evident from Fig.~\ref{fig4}, the accuracy attained reaches a maximum of appr
   \caption{Training and Validation Performance of the Model. The plot displays the changes in accuracy (a) and loss(b) during the training (blue) and validation (orange) process.} \label{fig4}
 \end{figure}
 
-Surprisingly, when examining the performance on unseen images, the generated captions are relatively satisfactory. The dataset predominantly comprises images of dogs, streets, and humans, which appears to have influenced the model's focus in caption creation. Despite the constraints, the model exhibits promising performance in generating captions relevant to these specific scenarios. In Fig.~\ref{fig5}, an intriguing example is presented, wherein the image depicts an elephant walking on wetlands. The model identifies it as a black dog which is running.The predicated caption for this image in Persian is \begin{farsi}
-\arabicfont\small
- سیاه سگ یک است دویدن حال در
-\end{farsi} Remarkably, despite the misclassification, the caption generated by the model exhibits impeccable grammar. The figure further includes attention maps, offering valuable insights into the word-by-word caption generation process, despite the model's misperception of the image content.
+Surprisingly, the model's performance on unseen images remains satisfactory. The dataset's focus on dogs, streets, and humans shapes caption generation. The model adeptly produces relevant captions within these constraints. In Fig.~\ref{fig5}, an image portrays an elephant on wetlands mislabeled as a running black dog. Despite misclassification, the caption maintains impeccable grammar. The figure, featuring attention maps, offers insight into the captioning process, even when the model misinterprets the image. This highlights the model's linguistic competence, despite perceptual challenges, enriching understanding of its inner workings.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{elephant.png}

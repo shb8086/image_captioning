@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1692620789 "/media/shima/78F218F6F218B9F8/Private/image_captioning/paper_text/image_captioning_main.tex" "image_captioning_main.pdf" "image_captioning_main" 1692620790
+["pdflatex"] 1692957992 "/media/shima/78F218F6F218B9F8/Private/image_captioning/paper_text/image_captioning_main.tex" "image_captioning_main.pdf" "image_captioning_main" 1692957993
   "/etc/texmf/web2c/texmf.cnf" 1669913362 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/media/shima/78F218F6F218B9F8/Private/image_captioning/paper_text/image_captioning_main.tex" 1692620787 35822 2a214dcaa092e44b9df80da43529a697 ""
+  "/media/shima/78F218F6F218B9F8/Private/image_captioning/paper_text/image_captioning_main.tex" 1692957992 35822 2a214dcaa092e44b9df80da43529a697 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1636758526 20144 8a7de377ae7a11ee924a7499611f5a9d ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty" 1622581934 4946 461cc78f6f26901410d9f1d725079cc6 ""
@@ -32,8 +32,8 @@
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1689333615 3667525 c7ec1eb941af8a9ed13dae90d7b4ac18 ""
   "elephant.png" 1691407214 564400 d50dcc6dcd0f4658b7bbab612c3e73c8 ""
   "fig2.png" 1692608738 52442 ef7517e0464fa2ee3bc9d01086c0a808 ""
-  "image_captioning_main.aux" 1692620789 3967 d1b5945d02ef22dd333ac53d78817923 "pdflatex"
-  "image_captioning_main.tex" 1692620787 35822 2a214dcaa092e44b9df80da43529a697 ""
+  "image_captioning_main.aux" 1692957992 3967 d1b5945d02ef22dd333ac53d78817923 "pdflatex"
+  "image_captioning_main.tex" 1692957992 35822 2a214dcaa092e44b9df80da43529a697 ""
   "length_distribution.png" 1689679540 75893 ef0b661b1bd463999dd5c8894ea60a06 ""
   "llncs.cls" 1662366460 43530 d52f921432ec1a201702604aae613d16 ""
   "long_short.jpg" 1689678848 789605 5685bf397c9fa1d39f668eb7db718de4 ""

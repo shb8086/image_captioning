@@ -10,7 +10,7 @@ Explore the following links to access image datasets relevant to your paper:
 
 To compile the LaTeX file and generate the PDF, you have two options:
 
-1. **Using pdflatex directly:**
+**Biuld pdf using pdflatex:**
    ```bash
    ./build.sh
 

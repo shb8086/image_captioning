@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.7.14)  25 AUG 2023 12:06
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.10.27)  27 OCT 2023 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/media/shima/78F218F6F218B9F8/Private/image_captioning/paper_text/image_captioning_main.tex
-(/media/shima/78F218F6F218B9F8/Private/image_captioning/paper_text/image_captioning_main.tex
+**/media/shima/78F218F6F218B9F8/Private/image_captioning/paper_text/MMM2024_didnt_send/image_captioning_main.tex
+(/media/shima/78F218F6F218B9F8/Private/image_captioning/paper_text/MMM2024_didnt_send/image_captioning_main.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (./llncs.cls
 Document Class: llncs 2022/09/05 v2.22 
@@ -226,43 +226,25 @@ Overfull \hbox (2.43268pt too wide) in paragraph at lines 41--42
 [2]
 Underfull \vbox (badness 5105) has occurred while \output is active []
 
- [3] [4] [5]
-Overfull \hbox (4.70937pt too wide) in paragraph at lines 111--112
-[]\T1/lmr/m/n/10 The \T1/lmtt/m/n/10 image_name \T1/lmr/m/n/10 col-umn con-tains im-age iden-ti-fiers from the Flickr30k dataset,
- []
-
-File: fig2.png Graphic file (type bmp)
-<fig2.png>
-[6]
-File: long_short.jpg Graphic file (type bmp)
-<long_short.jpg>
- [7]
-File: length_distribution.png Graphic file (type bmp)
-<length_distribution.png>
- [8] [9] [10]
-File: loss.png Graphic file (type bmp)
-<loss.png>
-File: elephant.png Graphic file (type bmp)
-<elephant.png>
- [11] [12]
+ [3]
 Missing character: There is no – ("2013) in font ec-lmr9!
 Missing character: There is no ’ ("2019) in font ec-lmr9!
 Missing character: There is no ’ ("2019) in font ec-lmr9!
 
-Underfull \hbox (badness 1648) in paragraph at lines 257--258
+Underfull \hbox (badness 1648) in paragraph at lines 107--108
 []\T1/lmr/m/n/9 Krasin, Ivan, et al. "Open-im-ages: A pub-lic dataset for large-scale multi-
  []
 
 Missing character: There is no – ("2013) in font ec-lmr9!
 Missing character: There is no – ("2013) in font ec-lmr9!
-[13] (./image_captioning_main.aux) ) 
+[4] [5] (./image_captioning_main.aux) ) 
 Here is how much of TeX's memory you used:
- 1755 strings out of 478113
- 27366 string characters out of 5852391
- 328256 words of memory out of 5000000
- 22401 multiletter control sequences out of 15000+600000
- 494247 words of font info for 40 fonts, out of 8000000 for 9000
+ 1706 strings out of 478085
+ 26670 string characters out of 5851110
+ 328424 words of memory out of 5000000
+ 22368 multiletter control sequences out of 15000+600000
+ 493928 words of font info for 39 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 55i,7n,62p,1048b,304s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,7n,62p,1067b,300s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on image_captioning_main.pdf (13 pages).
+Output written on image_captioning_main.pdf (5 pages).

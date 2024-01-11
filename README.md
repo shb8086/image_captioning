@@ -1,12 +1,16 @@
-# README
-Want to submit for https://www.mmm2024.org/    
+## Links to Image Datasets
 
-Full paper submissions (Regular & Special Session papers) must not exceed 12 pages (all manuscript content, including figures, tables and references, must fit into the page limit).         
-Regular and Special Session Paper Submission: 4 September 2023.                   
+Explore the following links to access image datasets relevant to your paper:
 
-### links to the image dataset
+- [Kaggle Image Captioning Dataset](https://www.kaggle.com/code/hsankesara/image-captioning)
+- [Flickr Image Dataset on Kaggle](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset/versions/1?resource=download)
+- [Keras Image Captioning Example](https://keras.io/examples/vision/image_captioning/)
 
-https://www.kaggle.com/code/hsankesara/image-captioning            
-https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset/versions/1?resource=download         
+## Compilation
 
-https://keras.io/examples/vision/image_captioning/         
+To compile the LaTeX file and generate the PDF, you have two options:
+
+1. **Using pdflatex directly:**
+   ```bash
+   ./build.sh
+

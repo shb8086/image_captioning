@@ -17,10 +17,10 @@ import pandas as pd
 
 # Global constants
 TEST_SIZE = 0.2  # 20% of the data will be used for testing
-IMAGE_DIR = "../dataset/images"
-CAPTIONS_CSV = "../dataset/captions.csv"
-TRAIN_DIR = "../dataset/train_dir"
-TEST_DIR = "../dataset/test_dir"
+IMAGE_DIR = "../captions/images"
+CAPTIONS_CSV = "../captions/captions.csv"
+TRAIN_DIR = "../captions/train_dir"
+TEST_DIR = "../captions/test_dir"
 SOURCE_DIR_COPY = '../Flicker30k/Images/'
 
 def contains_alpha_numeric(text):
@@ -269,7 +269,7 @@ if __name__ == "__main__":
     copy_files_from_csv(CAPTIONS_CSV, SOURCE_DIR_COPY, IMAGE_DIR)
 
     # Example usage for finding rows with alphanumeric values
-    csv_file_path_find = '../dataset/captions_all.csv'
+    csv_file_path_find = '../captions/captions_all.csv'
     column_index_find = 2
     output_file_find = 'row_numbers.txt'
 
@@ -282,8 +282,8 @@ if __name__ == "__main__":
     split_data(IMAGE_DIR, TRAIN_DIR, TEST_DIR, TEST_SIZE)
     
     # Example usage for creating CSV files with image names
-    csv_file_train = "../dataset/train_captions.csv"
-    csv_file_test = "../dataset/test_captions.csv"
+    csv_file_train = "../captions/train_captions.csv"
+    csv_file_test = "../captions/test_captions.csv"
 
     create_image_list_csv(TRAIN_DIR, csv_file_train)
     create_image_list_csv(TEST_DIR, csv_file_test)

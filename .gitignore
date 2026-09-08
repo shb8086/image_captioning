@@ -5,23 +5,23 @@
 *.pth
 *.ckpt
 
-# Dataset files
-dataset/
+# Caption data files
+captions/
 
 # Result source images (keep PNGs)
-src/results/*.jpg
+training/results/*.jpg
 
 # Compiled LaTeX output
-text/main.pdf
-text/*.aux
-text/*.log
-text/*.out
-text/*.toc
-text/*.fls
-text/*.fdb_latexmk
-text/*.synctex.gz
-text/*.bbl
-text/*.blg
+paper/main.pdf
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+paper/*.bbl
+paper/*.blg
 
 # Python
 __pycache__/

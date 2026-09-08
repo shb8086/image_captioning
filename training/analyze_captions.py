@@ -97,7 +97,7 @@ def plot_word_length_distribution(word_lengths, save_file=None):
     plt.show()
 
 if __name__ == "__main__":
-    csv_file = '../dataset/captions_all.csv'
+    csv_file = '../captions/captions_all.csv'
     column_index = 2
 
     (

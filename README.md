@@ -81,19 +81,19 @@ This is the **first Persian image captioning dataset** based on Flickr30k. Each 
 
 ### Caption length distribution
 
-![Caption Length Distribution](text/length_distribution.png)
+![Caption Length Distribution](paper/length_distribution.png)
 
 Most captions are 8–14 words. The longest caption (77 words) describes a BMX stunt in exhaustive detail; the shortest are just two words like *"خمیازه سگ"* ("dog's yawn").
 
 ### Extreme caption examples
 
-![Longest and shortest captions](text/long_short.jpg)
+![Longest and shortest captions](paper/long_short.jpg)
 
 *(a) Longest caption — 77 words (b) Shortest caption — 2 words*
 
 ### Most frequent words
 
-![Top repeated words](text/top_repeated.png)
+![Top repeated words](paper/top_repeated.png)
 
 Common words like *یک* (a/an), *در* (in), *با* (with) appear tens of thousands of times — consistent with the grammar of descriptive Persian sentences.
 
@@ -106,12 +106,12 @@ The dataset is not included in this repository due to size. Download it from Kag
 
 Place files as follows:
 ```
-dataset/
+captions/
 ├── captions.csv           ← image_name + comment_number + comment-fa + comment-en
 ├── train_captions.csv     ← list of training image filenames
 └── test_captions.csv      ← list of test image filenames
 
-dataset/images/            ← all Flickr30k .jpg files go here
+captions/images/           ← all Flickr30k .jpg files go here
 ```
 
 ---
@@ -150,7 +150,7 @@ A dense layer over the 10,000-word vocabulary with smart initialization: the ini
 
 ### Training curves
 
-![Training and validation accuracy and loss](text/loss.png)
+![Training and validation accuracy and loss](paper/loss.png)
 
 The model converges to roughly **38% token accuracy**. The primary goal of this work is the dataset itself rather than pushing accuracy — no additional techniques (beam search, BLEU optimization, data augmentation) were applied.
 
@@ -162,7 +162,7 @@ Each output image shows the generated Persian caption at the top, then one panel
 
 **Waterfall scene**
 
-![Attention map — waterfall scene](src/results/2.png)
+![Attention map — waterfall scene](training/results/2.png)
 
 *"یک مرد در حال تماشای یک منطقه جنگلی هستند"* — "A man watching a jungle area"
 
@@ -170,7 +170,7 @@ Each output image shows the generated Persian caption at the top, then one panel
 
 **Forest / outdoor scene**
 
-![Attention map — forest scene](src/results/3.png)
+![Attention map — forest scene](training/results/3.png)
 
 *"یک زن و شوهر در یک روز آفتابی در یک منطقه جنگلی ایستاده اند"* — "A husband and wife standing on a sunny day in a jungle"
 
@@ -178,7 +178,7 @@ Each output image shows the generated Persian caption at the top, then one panel
 
 **Elephant (misidentified)**
 
-![Attention map — elephant](src/results/4.png)
+![Attention map — elephant](training/results/4.png)
 
 *"یک سگ سیاه در حال دویدن است"* — "A black dog is running"
 
@@ -188,7 +188,7 @@ The model misidentifies the elephant as a dog — the training set contains far 
 
 **Camera (misidentified)**
 
-![Attention map — camera](src/results/5.png)
+![Attention map — camera](training/results/5.png)
 
 *"یک مرد در حال ساخت یک ماشین است"* — "A man is building a machine"
 
@@ -198,7 +198,7 @@ Scene bias: the camera is on a surface that looks like a workbench, so the model
 
 **City street**
 
-![Attention map — city street](src/results/6.png)
+![Attention map — city street](training/results/6.png)
 
 *"یک کارگر ساختمانی در خیابان قدم می زنند"* — "A construction worker walking on the street"
 
@@ -206,7 +206,7 @@ Scene bias: the camera is on a surface that looks like a workbench, so the model
 
 **Kitchen / food**
 
-![Attention map — kitchen](src/results/7.png)
+![Attention map — kitchen](training/results/7.png)
 
 *"مردی با لباس سبز و شلوار جین آبی در حال خوردن غذا است"* — "A man in a green shirt and blue jeans is eating food"
 
@@ -214,7 +214,7 @@ Scene bias: the camera is on a surface that looks like a workbench, so the model
 
 **Rainy city**
 
-![Attention map — rainy city](src/results/8.png)
+![Attention map — rainy city](training/results/8.png)
 
 *"یک مرد در یک خیابان شلوغ شهر در حال ساخت و یک شهر است"* — "A man in a busy city street building a city"
 
@@ -231,9 +231,9 @@ pip install einops matplotlib numpy pandas Pillow tqdm arabic-reshaper python-bi
 
 ### Run training
 
-Open `src/train.ipynb` in Jupyter and run all cells. The notebook:
+Open `training/train.ipynb` in Jupyter and run all cells. The notebook:
 
-1. Loads captions and image paths from `dataset/`
+1. Loads captions and image paths from `captions/`
 2. Builds a MobileNetV3Small feature extractor
 3. Builds a 10,000-word Persian tokenizer
 4. Optionally caches image features to disk (speeds up training)
@@ -268,13 +268,13 @@ The model supports three decoding modes:
 
 ```
 image_captioning/
-├── src/
+├── training/
 │   ├── train.ipynb          ← main notebook: data loading, training, inference
 │   ├── analyze_captions.py  ← dataset statistics and plots
 │   ├── process_csv.py       ← CSV preprocessing utilities
 │   └── results/             ← attention map outputs (PNG)
-├── dataset/                 ← CSV files (not in repo — download separately)
-├── text/
+├── captions/                ← CSV files (not in repo — download separately)
+├── paper/
 │   ├── main.tex             ← research paper (LaTeX source)
 │   ├── loss.png             ← training curves
 │   ├── length_distribution.png
@@ -292,7 +292,7 @@ This project accompanies the paper:
 > **Expanding Flicker30k: a Novel Dataset for Image Captioning in Persian**
 > Shima Baniadamdizaj
 
-The LaTeX source is in `text/main.tex`. To build the PDF:
+The LaTeX source is in `paper/main.tex`. To build the PDF:
 ```bash
 cd text && ./build.sh
 ```

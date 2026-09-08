@@ -5,9 +5,6 @@
 *.pth
 *.ckpt
 
-# Caption data files
-captions/
-
 # Result source images (keep PNGs)
 training/results/*.jpg
 
